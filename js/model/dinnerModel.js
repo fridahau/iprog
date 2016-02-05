@@ -1,9 +1,10 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
-	var numOfGuests = 0;
- 	
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
+
+	var numOfGuests = 0;
+	var menu = [];
 
 	// sets the number of guests
 	this.setNumberOfGuests = function(num) {
@@ -12,48 +13,56 @@ var DinnerModel = function() {
 
 	// should return 
 	this.getNumberOfGuests = function() {
-		//this.numberOfGuests = container.find("#numberOfGuests");
-		//var number = parseInt(this.numberOfGuests.text());
-		//return number;
-		//return parseInt(this.numberOfGuests.text());
 		return parseInt(numOfGuests);
-	}
-
-	this.addGuest = function() {
-		numOfGuests++;
 	}
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		var fullMenu = this.getFullMenu();
-
+		$.each(menu, function(index, dish){
+			if(dish.type == type) {
+				return dish;
+			}
+		});
 	}
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-
-		
+		return menu;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
-		//TODO Lab 2
+		var ingredientsList = [];
+		$.each(menu, function(index, dish){
+			ingredientsList.push(dish.ingredients);
+		});
+
+		return ingredientsList;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-		//TODO Lab 2
+		var totalPrice = 0;
+		var ingredientsList = this.getAllIngredients();
+		$.each(ingredientsList, function(index, ingredients){
+			$.each(ingredients, function(i, ingredient) {
+				totalprice += ingredient.price*numOfGuests;
+			});
+			
+		});
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		//TODO Lab 2 
+		menu.push(getDish(id));
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		//TODO Lab 2
+		menu = $.grep(menu, function(dish){
+			return dish.id != id;
+		});
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
