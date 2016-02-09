@@ -1,0 +1,2 @@
+Frågor
+* Hur gör man för att inte upprepa kod mellan "selectDish" och "viewDish"

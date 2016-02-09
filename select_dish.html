@@ -8,7 +8,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-
+    <style>
+    	#searchDishes {
+    	}
+    	 #menu {
+    	 	
+    	 }
+    </style>
   </head>
   <body>
 	<div class="container-fluid">
@@ -18,14 +24,91 @@
   			From the best chef's in the world directly into your kitchen
 		</div>
 
-		<h1>Dinner planner</h1>
-		<div id="exampleView">
-			<div>
-				Number of guests: <span id="numberOfGuests"></span>
+		
+		<div class="row">
+			<!-- Navbar -->
+			<div class="col-lg-3 sidenav" id="menu">
+				<h4>My dinner</h4>
+				<div id ="exampleView">
+					Number of guests:
+					<span id="numberOfGuests"></span>
+					<button id="minusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-minus"></span></button>
+					<button id="plusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+				</div>
+
+				<!-- menu -->
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Dish Name</th>
+							<th>Cost</th>
+						</tr>
+					</thead>
+					<tr>
+						<td></td>
+						<td>SEK <span id="totalCost"></span></td>
+					</tr>
+				</table>
+				<botton type="botton" class="btn btn-default">Confirm dinner</botton>	
 			</div>
-			<div>
-          		<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-				<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+
+			<div class="col-lg-9">
+				<div id="searchDishes">
+					<div class="row" id="searchHeader">
+	  					<h4>Select Dish</h4>
+	  					<hr>
+	 					<div class="row">
+	  						<!--search-->
+	 						<div class="col-lg-4">
+								<form class="navbar-form" role="search">
+    							<div class="form-group">
+       								<input type="text" class="form-control input-sm" placeholder="Search">
+   								</div>
+    							<button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+								</form>
+							</div>
+
+							<!-- dropdown -->
+							<div class="col-lg-8">
+								<div class="dropdown"> Filter: 
+							  		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">All
+							 		<span class="caret"></span></button>
+							  			<ul class="dropdown-menu">
+							    			<li><a href="#">Starter</a></li>
+							    			<li><a href="#">Main course</a></li>
+							    			<li><a href="#">Dessert</a></li>
+							  			</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--Select dish-->
+				<div class="row text-center" id="selectDish">
+					<div class="row">
+						<div class="col-lg-3">
+							<img id="dishImage" src="images/bakedbrie.jpg">
+							<p id="dishName">Namn</p>
+							<p id="dishDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros.  </p>
+						</div>
+						<div class="col-lg-3">
+							<img id="dishImage" src="images/bakedbrie.jpg">
+							<p id="dishName">Namn</p>
+							<p id="dishDescription">Bla bla</p>
+						</div>
+						<div class="col-lg-3">
+							<img id="dishImage" src="images/bakedbrie.jpg">
+							<p id="dishName">Namn</p>
+							<p id="dishDescription">Bla bla</p>
+						</div>
+						<div class="col-lg-3">
+							<img id="dishImage" src="images/bakedbrie.jpg">
+							<p id="dishName">Namn</p>
+							<p id="dishDescription">Bla bla</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
