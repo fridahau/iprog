@@ -13,11 +13,14 @@
       h3{
         display: inline-block;
         padding: 0px 15px 15px 15px;
-      }   
+      } 
+      #warp{
+        padding: 15px;
+      }  
 
       #miniHeader{
-      	background-color: #FFE599;
-      	margin: 0px;
+        background-color: #FFE599;
+        margin: 0px;
       }
 
     </style>
@@ -40,39 +43,20 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-9 text-right">
-          <table class="table">
-            <tr>
-              <td>
-                <image src="images/icecream.jpg" id="dishImage">
-                <h4 id="dishName">Ice cream</h4>
-                <p><span id="dishPrice">14</span> <span id="currency">SEK</span> </p>
-              </td>
-              <td>
-                <image src="images/icecream.jpg" id="dishImage">
-                <h4 id="dishName">Ice cream</h4>
-                <p><span id="dishPrice">14</span> <span id="currency">SEK</span> </p>
-              </td>
-              <td>
-                <image src="images/icecream.jpg" id="dishImage">
-                <h4 id="dishName">Ice cream</h4>
-                <p><span id="dishPrice">14</span> <span id="currency">SEK</span> </p>
-              </td>
-            </tr>       
-          </table>
+        <div class="col-sm-6">
+          <img src="images/icecream.jpg" id="dishImage" align="left">
+          <h3><span id="dishName">Ice cream</h3>
+          <p><span id="dishDescription"></span>
         </div>
 
-        <div class="col-lg-3">
-          Total: 
-          <p><span id="totalPrice">42</span> <span id="currency">SEK</span></p>
-        </div>
-        <hr>
-        </div>
+        <div class="col-sm-6">
+          <h3>Preparation</h3>
+          <span id="dishPreparation"></span>
 
-        <div class="row text-center">
-          <button id="minusGuest" class="btn btn-default">Print full recipe</button>
         </div>
       </div>
+
+      
     </div>           
    
 

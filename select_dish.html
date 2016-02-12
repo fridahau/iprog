@@ -8,110 +8,109 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <style>
-    	#searchDishes {
-    	}
-    	 #menu {
-
-    	 }
-    </style>
+    <link rel="stylesheet" href="css.css">
   </head>
   <body>
-	<div class="container-fluid">
-		<!-- Header -->
-		<div class="page-header">
-  			<h1>Homelette</h1>
-  			From the best chef's in the world directly into your kitchen
-		</div>
+    <!--header-->
+    <div id="header" class="container-fluid">
+      <h1>Homelette</h1>
+      <p id="citation"> From the best chef's in the world directly into your kitchen </p>
+    </div>
 
-		
-		<div class="row">
-			<!-- Navbar -->
-			<div class="col-lg-3 sidenav" id="menu">
-				<h4>My dinner</h4>
-				<div id ="exampleView">
-					Number of guests:
-					<span id="numberOfGuests"></span>
-					<button id="minusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-minus"></span></button>
-					<button id="plusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
-				</div>
+    <div id="wrapper">
+    <!-- sidebar-->
+      <div id="sidebar-wrapper" class="col-sm-2">
+          <h3>My dinner</h3>
+          <hr>
+            <div id ="exampleView">
+              Number of guests:
+              <span id="numberOfGuests"></span>
+              <button id="minusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-minus"></span></button>
+              <button id="plusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
 
-				<!-- menu -->
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Dish Name</th>
-							<th>Cost</th>
-						</tr>
-					</thead>
-					<tr>
-						<td></td>
-						<td>SEK <span id="totalCost"></span></td>
-					</tr>
-				</table>
-				<botton type="botton" class="btn btn-default">Confirm dinner</botton>	
-			</div>
+        <!-- menu -->
+        <table class="table" style='margin-top: 15px;'>
+          <thead style='background-color: #f6f6f6;'>
+            <tr>
+              <th>Dish Name</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tr>
+            <td></td>
+            <td>SEK <span id="totalCost"></span></td>
+          </tr>
+        </table>
+        <div class="text-center">
 
-			<div class="col-lg-9">
-				<div id="searchDishes">
-					<div class="row" id="searchHeader">
-	  					<h4>Select Dish</h4>
-	  					<hr>
-	 					<div class="row">
-	  						<!--search-->
-	 						<div class="col-lg-4">
-								<form class="navbar-form" role="search">
-    							<div class="form-group">
-       								<input type="text" class="form-control input-sm" placeholder="Search">
-   								</div>
-    							<button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
-								</form>
-							</div>
+          <botton type="botton" class="btn btn-default">Confirm dinner</botton> 
+         </div>
+      </div>   
+           
 
-							<!-- dropdown -->
-							<div class="col-lg-8">
-								<div class="dropdown"> Filter: 
-							  		<button class="btn btn-default dropdown-toggle btn-sm" type="button" data-toggle="dropdown">All
-							 		<span class="caret"></span></button>
-							  			<ul class="dropdown-menu">
-							    			<li><a href="#">Starter</a></li>
-							    			<li><a href="#">Main course</a></li>
-							    			<li><a href="#">Dessert</a></li>
-							  			</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+        <!-- main -->
+        <div id="main-wrapper" class="col-sm-10 pull-right">
+          <div id="main">
 
-				<!--Select dish-->
-				<div class="row text-center" id="selectDish">
-					<div class="row">
-						<div class="col-lg-3">
-							<img id="dishImage" src="images/bakedbrie.jpg">
-							<p id="dishName">Namn</p>
-							<p id="dishDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros.  </p>
-						</div>
-						<div class="col-lg-3">
-							<img id="dishImage" src="images/bakedbrie.jpg">
-							<p id="dishName">Namn</p>
-							<p id="dishDescription">Bla bla</p>
-						</div>
-						<div class="col-lg-3">
-							<img id="dishImage" src="images/bakedbrie.jpg">
-							<p id="dishName">Namn</p>
-							<p id="dishDescription">Bla bla</p>
-						</div>
-						<div class="col-lg-3">
-							<img id="dishImage" src="images/bakedbrie.jpg">
-							<p id="dishName">Namn</p>
-							<p id="dishDescription">Bla bla</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+              <!-- main header -->
+              <div id="searchHeader">
+                <h3>Select dish</h3>
+                <hr>
+
+                  <!-- search -->
+                  <div id="searchBar" class="col-sm-5">
+                    <form class="navbar-form navbar-left" role="search" id="searchBar">
+                      <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="Search">
+                      </div>
+                      <button type="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                  </div>
+
+                    <div id="filterGroup" class="col-sm-4">
+                      Filter:
+                      <div class="btn-group" id="filterBar">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          All <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Starter</a></li>
+                          <li><a href="#">Main course</a></li>
+                          <li><a href="#">Desert</a></li>
+                        </ul>
+                      </div>
+                    </div>
+              </div>
+
+              
+              <!-- Content -->
+              <div id="bajs">
+                <div class="row text-center">
+                	<div class="col-sm-3">
+                		<img src="images/icecream.jpg" id="dishImage">
+                		<h3 id="dishName">Ice cream</h3>
+                		<p id="dishDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                	</div>
+                	<div class="col-sm-3"><img src="images/icecream.jpg" id="dishImage">
+                		<h3 id="dishName">Ice cream</h3>
+                		<p id="dishDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                	</div>
+                	<div class="col-sm-3"><img src="images/icecream.jpg" id="dishImage">
+                		<h3 id="dishName">Ice cream</h3>
+                		<p id="dishDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                	</div>
+                	<div class="col-sm-3"><img src="images/icecream.jpg" id="dishImage">
+                		<h3 id="dishName">Ice cream</h3>
+                		<p id="dishDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                	</div>
+
+                </div>
+              </div>
+            </div>                  
+        </div>
+    </div>
+  </div>
 
     <!-- jQuery -->
     <!--<script src="https://code.jquery.com/jquery.js"></script> -->
@@ -120,10 +119,10 @@
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-	<!-- The application JavaScript code -->
-	<script src="js/app.js"></script>
-	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/exampleView.js"></script>
-	<script src="js/view/exampleViewController.js"></script>
+  <!-- The application JavaScript code -->
+  <script src="js/app.js"></script>
+  <script src="js/model/dinnerModel.js"></script>
+  <script src="js/view/exampleView.js"></script>
+  <script src="js/view/exampleViewController.js"></script>
   </body>
 </html>

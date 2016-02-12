@@ -8,38 +8,51 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css.css">
     <style type="text/css">
-    	/*Fixa bakgrundbild*/
-    	.well{
-    		background-color: rgb(255, 255, 255, 0.4);
-    	}
+      /*Fixa bakgrundbild*/
+      body { 
+        background: url(http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg) no-repeat center center fixed
+      }
+
+      #homeScreen{
+        margin: 15px;
+      }
+
+      .well {
+        background-color: rgba(245, 245, 245, 0.7);
+        border: none;
+      }
+
+      #header {
+        height: 135px;
+        background-color: rgba(255, 229, 153, 0.7);
+      }
     </style>
+
   </head>
   <body>
-	<div class="container-fluid">
-		<!-- Header -->
-		<div class="page-header">
-  			<h1>Homelette</h1>
-  			From the best chef's in the world directly into your kitchen
-		</div>
+    <!--header-->
+    <div id="header" class="container-fluid">
+      <h1>Homelette</h1>
+      <p id="citation"> From the best chef's in the world directly into your kitchen </p>
+    </div>
 
-		<!-- Home Screen -->
-		<div id="homeScreen">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="well">
-						<h3>A Home Dinner Service</h3>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit pharetra enim nec mattis. Ut elementum semper leo, eu faucibus tortor. Quisque sed mollis est. Aenean rutrum blandit sapien et volutpat. Cras ultricies id sem in iaculis. Nullam nulla lacus, tincidunt et congue quis, maximus a dui. Morbi non turpis sapien. Cras fermentum malesuada purus non auctor. Vivamus et nisl odio. Etiam nec orci vitae sapien sagittis scelerisque. Quisque eget augue varius, dictum sapien ut, porttitor augue. Nulla nec aliquam est. Praesent non turpis ut est lobortis viverra. Aliquam erat volutpat.</p>
-						<p>Start quickly</p>
-						<botton type="botton" class="btn btn-default">Create new dinner</botton>	
-					</div>
-				</div>
+    <div id="homeScreen">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="well">
+            <h3>A Home Dinner Service</h3>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit pharetra enim nec mattis. Ut elementum semper leo, eu faucibus tortor. Quisque sed mollis est. Aenean rutrum blandit sapien et volutpat. Cras ultricies id sem in iaculis. Nullam nulla lacus, tincidunt et congue quis, maximus a dui. Morbi non turpis sapien. Cras fermentum malesuada purus non auctor. Vivamus et nisl odio. Etiam nec orci vitae sapien sagittis scelerisque. Quisque eget augue varius, dictum sapien ut, porttitor augue. Nulla nec aliquam est. Praesent non turpis ut est lobortis viverra. Aliquam erat volutpat.</p>
+            <p>Start quickly</p>
+            <botton type="botton" class="btn btn-default">Create new dinner</botton>  
+          </div>
+        </div>
 
-				<div class="col-lg-6"></div>
-			</div>
-		</div>
-	</div>
+        <div class="col-lg-6"></div>
+      </div>
+    </div>
 
     <!-- jQuery -->
     <!--<script src="https://code.jquery.com/jquery.js"></script> -->
@@ -48,10 +61,10 @@
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-	<!-- The application JavaScript code -->
-	<script src="js/app.js"></script>
-	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/exampleView.js"></script>
-	<script src="js/view/exampleViewController.js"></script>
+  <!-- The application JavaScript code -->
+  <script src="js/app.js"></script>
+  <script src="js/model/dinnerModel.js"></script>
+  <script src="js/view/exampleView.js"></script>
+  <script src="js/view/exampleViewController.js"></script>
   </body>
 </html>
