@@ -10,12 +10,38 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <style type="text/css">
       body {
-        padding-top: 0px;
+        font: 400 15px Lato, sans-serif;
+        line-height: 1.8;
+        color: #434A54;
         overflow: hidden;
-      } 
+      }
+
+      h1 {
+        margin-top: 30px;
+        color: #303030;
+        font-weight: 600;
+      }
+
+      h3 {
+        color: #303030;
+      }  
+
+      p{
+        padding: 15px;
+      }
+
+      hr {
+        border-color: #000;
+      }
+
+      #citation {
+        padding: 0px;
+      }
 
       #header {
-        padding: 0 15px 0 15px;
+        height: 135px;
+        background-color: none;
+        background-color: #EEEEEE;
       }
 
       #wrapper {
@@ -47,8 +73,6 @@
         right: 0;
         left: 0;
         overflow-y: auto;
-        margin-left: 15px;
-        margin-right: 15px;
       }
 
       #searchHeader {
@@ -56,70 +80,98 @@
         left: 0;
         right: 0;
         top: 0;
-        margin-left: 15px;
-        margin-right: 15px;
-        margin-top: 15px;
+        background-color: #none;
+        padding: 0 15px 15px 15px;
+        background-color: #FFE599;
       }
 
       #sidebar-wrapper {
         height: 100%;
-        padding: 135px 0 0 15px;
+        padding: 135px 15px 0 15px;
         position: fixed;
       }
 
-      #sidebar {
-        position: relative;
-        height: 100%;
-        overflow: hidden;
-      }
-
-      #sidebar .list-group-item {
-              border-radius: 0;
-              border-left: 0;
-              border-right: 0;
-              border-top: 0;
+      #searchBar{
+        padding: 0px;
+        margin: 0px;
       }
     </style>
   </head>
   <body>
     <!--header-->
-    <div id="header" class="page-header">
+    <div id="header" class="container-fluid">
       <h1>Homelette</h1>
-      <p> From the best chef's in the world directly into your kitchen </p>
+      <p id="citation"> From the best chef's in the world directly into your kitchen </p>
     </div>
 
     <div id="wrapper">
-
-    <!-- Sidebar-->
-      <div id="sidebar-wrapper" class="col-md-3">
-            <div id="sidebar">
-                <ul class="nav list-group">
-                    <li>
-                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 1</a>
-                    </li>
-                    <li>
-                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 2</a>
-                    </li>
-                    <li>
-                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 9</a>
-                    </li>
-                    <li>
-                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 10</a>
-                    </li>
-                    <li>
-                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 11</a>
-                    </li>
-                </ul>
+    <!-- sidebar-->
+      <div id="sidebar-wrapper" class="col-sm-2">
+          <h3>My dinner</h3>
+          <hr>
+            <div id ="exampleView">
+              Number of guests:
+              <span id="numberOfGuests"></span>
+              <button id="minusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-minus"></span></button>
+              <button id="plusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
             </div>
-        </div>
+
+        <!-- menu -->
+        <table class="table" style='margin-top: 15px;'>
+          <thead style='background-color: #f6f6f6;'>
+            <tr>
+              <th>Dish Name</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tr>
+            <td></td>
+            <td>SEK <span id="totalCost"></span></td>
+          </tr>
+        </table>
+        <div class="text-center">
+
+          <botton type="botton" class="btn btn-default">Confirm dinner</botton> 
+         </div>
+      </div>   
+           
 
         <!-- main -->
-        <div id="main-wrapper" class="col-md-9 pull-right">
-            <div id="main">
-              <div id="searchHeader" class="page-header">
-                <h3>Admin</h3>
+        <div id="main-wrapper" class="col-sm-10 pull-right">
+          <div id="main">
+
+              <!-- main header -->
+              <div id="searchHeader">
+                <h3>Select dish</h3>
+                <hr>
+
+                  <!-- search -->
+                  <div id="searchBar" class="col-sm-5">
+                    <form class="navbar-form navbar-left" role="search" id="searchBar">
+                      <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="Search">
+                      </div>
+                      <button type="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                  </div>
+
+                    <div id="filterGroup" class="col-sm-4">
+                      Filter:
+                      <div class="btn-group" id="filterBar">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          All <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Starter</a></li>
+                          <li><a href="#">Main course</a></li>
+                          <li><a href="#">Desert</a></li>
+                        </ul>
+                      </div>
+                    </div>
               </div>
+
               
+              <!-- Content -->
               <div id="bajs">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget magna et ante suscipit lacinia. Aenean porttitor velit id pretium blandit. Aenean ut sodales ante. Ut faucibus ornare venenatis. Duis sit amet arcu eros. Mauris volutpat vestibulum congue. Nam volutpat, urna eu varius dapibus, velit nisl bibendum lorem, sit amet dapibus sem dolor eu felis.
 
@@ -150,6 +202,7 @@
             </div>                  
         </div>
     </div>
+  </div>
 
     <!-- jQuery -->
     <!--<script src="https://code.jquery.com/jquery.js"></script> -->
