@@ -20,32 +20,35 @@
     <div id="wrapper">
     <!-- sidebar-->
       <div id="sidebar-wrapper" class="col-sm-2">
-          <h3>My dinner</h3>
-          <hr>
-            <div id ="exampleView">
-              Number of guests:
-              <span id="numberOfGuests"></span>
-              <button id="minusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-minus"></span></button>
-              <button id="plusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
-            </div>
+        <h3>My dinner</h3>
+        <hr>
+        <div id ="menuView">
+          Number of guests:
+          <span id="numberOfGuests"></span>
+          <button id="minusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-minus"></span></button>
+          <button id="plusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+        
 
         <!-- menu -->
-        <table class="table" style='margin-top: 15px;'>
-          <thead style='background-color: #f6f6f6;'>
-            <tr>
-              <th>Dish Name</th>
-              <th>Cost</th>
-            </tr>
-          </thead>
-          <tr>
-            <td></td>
-            <td>SEK <span id="totalCost"></span></td>
-          </tr>
-        </table>
-        <div class="text-center">
+          <table class="table" style='margin-top: 15px;' id="menuTable">
+            <thead style='background-color: #f6f6f6;'>
+              <tr>
+                <th>Dish Name</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><span id="totalCost"></span> SEK</td>
+              </tr>
+            </tbody>
+          </table>
 
-          <botton type="botton" class="btn btn-default">Confirm dinner</botton> 
-         </div>
+          <div class="text-center">
+            <botton type="botton" class="btn btn-default">Confirm dinner</botton> 
+          </div>
+        </div>
       </div>   
            
 
@@ -122,7 +125,7 @@
   <!-- The application JavaScript code -->
   <script src="js/app.js"></script>
   <script src="js/model/dinnerModel.js"></script>
-  <script src="js/view/exampleView.js"></script>
+  <script src="js/view/menuView.js"></script>
   <script src="js/view/exampleViewController.js"></script>
   </body>
 </html>

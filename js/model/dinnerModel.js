@@ -43,6 +43,8 @@ var DinnerModel = function() {
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
 		var totalPrice = 0;
+
+		
 		var ingredientsList = this.getAllIngredients();
 		$.each(ingredientsList, function(index, ingredients){
 			$.each(ingredients, function(i, ingredient) {
@@ -50,6 +52,8 @@ var DinnerModel = function() {
 			});
 			
 		});
+
+		return totalPrice;
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
