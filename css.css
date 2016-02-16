@@ -42,6 +42,19 @@ body {
         display: inline-block;
       }
 
+      .table td,
+.table th
+{
+    text-align:left;
+}
+
+#right,
+.table td + td,
+.table th + th
+{
+    text-align:right;
+}
+
       #main-wrapper {
         height: 100%;
         padding: 135px 0 0px 0;
@@ -61,6 +74,7 @@ body {
         right: 0;
         left: 0;
         overflow-y: auto;
+        overflow-x: hidden;
       }
 
       #searchHeader {

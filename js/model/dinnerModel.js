@@ -3,8 +3,76 @@ var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 
-	var numOfGuests = 0;
-	var menu = [];
+	var numOfGuests = 1;
+	var menu = [{
+		'id':1,
+		'name':'French toast',
+		'type':'starter',
+		'image':'toast.jpg',
+		'description':"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.",
+		'ingredients':[{ 
+			'name':'eggs',
+			'quantity':0.5,
+			'unit':'',
+			'price':10
+			},{
+			'name':'milk',
+			'quantity':30,
+			'unit':'ml',
+			'price':6
+			},{
+			'name':'brown sugar',
+			'quantity':7,
+			'unit':'g',
+			'price':1
+			},{
+			'name':'ground nutmeg',
+			'quantity':0.5,
+			'unit':'g',
+			'price':12
+			},{
+			'name':'white bread',
+			'quantity':2,
+			'unit':'slices',
+			'price':2
+			}]
+		},{
+		'id':1,
+		'name':'French toast',
+		'type':'starter',
+		'image':'toast.jpg',
+		'description':"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.",
+		'ingredients':[{ 
+			'name':'eggs',
+			'quantity':0.5,
+			'unit':'',
+			'price':10
+			},{
+			'name':'milk',
+			'quantity':30,
+			'unit':'ml',
+			'price':6
+			},{
+			'name':'brown sugar',
+			'quantity':7,
+			'unit':'g',
+			'price':1
+			},{
+			'name':'ground nutmeg',
+			'quantity':0.5,
+			'unit':'g',
+			'price':12
+			},{
+			'name':'white bread',
+			'quantity':2,
+			'unit':'slices',
+			'price':2
+			}]
+		}];
+
+	//var menu = [];
+
+
 
 	// sets the number of guests
 	this.setNumberOfGuests = function(num) {
@@ -33,6 +101,7 @@ var DinnerModel = function() {
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
 		var ingredientsList = [];
+
 		$.each(menu, function(index, dish){
 			ingredientsList.push(dish.ingredients);
 		});
@@ -40,19 +109,32 @@ var DinnerModel = function() {
 		return ingredientsList;
 	}
 
+	//Returns the price for a specific fish (all ingredients multiplied by number of guests).
+	this.getDishCost = function(id){
+		var dishCost = 0;
+		var dish = this.getDish(id);
+
+		$.each(dish.ingredients, function(i, ingredient) {
+			dishCost += ingredient.price*numOfGuests;
+		});
+
+		return dishCost;
+	}
+
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
 		var totalPrice = 0;
-
-		
-		var ingredientsList = this.getAllIngredients();
-		$.each(ingredientsList, function(index, ingredients){
-			$.each(ingredients, function(i, ingredient) {
-				totalprice += ingredient.price*numOfGuests;
+	
+		$.each(menu, function(index, dish){
+			$.each(dish.ingredients, function(i, ingredient) {
+				totalPrice += ingredient.price*numOfGuests;
 			});
 			
-		});
 
+			//totalPrice += this.getDishCost(dish.id);
+			
+		});
+		
 		return totalPrice;
 	}
 
