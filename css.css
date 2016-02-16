@@ -42,18 +42,11 @@ body {
         display: inline-block;
       }
 
-      .table td,
-.table th
-{
-    text-align:left;
-}
 
-#right,
-.table td + td,
-.table th + th
-{
-    text-align:right;
-}
+      #right,
+      .table td + td, .table th + th {
+          text-align:right;
+      }
 
       #main-wrapper {
         height: 100%;
@@ -67,7 +60,7 @@ body {
           padding: 0 15px;
       }
 
-      #bajs {
+      #displayDishes {
         position: absolute;
         top: 150px;
         bottom: 0px;
