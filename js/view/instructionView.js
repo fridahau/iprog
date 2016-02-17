@@ -10,7 +10,6 @@ var InstructionView = function (container, model) {
 	this.numberOfGuests.html(model.getNumberOfGuests());
 	var loadMenu = function(){
 		var menu = model.getFullMenu();
-		menuList.html('test');
 
 		$.each(menu, function(i, o){
 			var dishName = o.name;
