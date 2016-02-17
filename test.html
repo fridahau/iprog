@@ -1,160 +1,80 @@
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
 
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <style>
-    body {
-        padding-top: 0px;
-        overflow: hidden;
-    }
-
-    #header{
-        padding: 0 15px 0 15px;
-    }
-    #wrapper {
-        min-height: 100%;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0px;
-        left: 0;
-        display: inline-block;
-    }
-    #main-wrapper {
-        height: 100%;
-        padding: 135px 0 0px 0;
-
-    }
-    #main {
-        position: relative;
-        height: 100%;
-        padding: 0 15px;
-    }
-    #bajs {
-        position: absolute;
-        top: 135px;
-        bottom: 0px;
-        right: 0;
-        left: 0;
-        overflow-y: auto;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    
-    #searchHeader {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        margin-left: 15px;
-        margin-right: 15px;
-        margin-top: 15px;
-    }
-    #sidebar-wrapper {
-        height: 100%;
-        padding: 135px 0 0px 0;
-        position: fixed;
-    }
-    #sidebar {
-        position: relative;
-        height: 100%;
-        overflow:hidden;
-    }
-    #sidebar .list-group-item {
-        border-radius: 0;
-        border-left: 0;
-        border-right: 0;
-        border-top: 0;
-    }
-    @media (max-width: 992px) {
-        body {
-            padding-top: 0px;
-        }
-    }
-    @media (min-width: 992px) {
-        #main-wrapper {
-            float:right;
-        }
-    }
-    @media (max-width: 992px) {
-        #main-wrapper {
-            padding-top: 0px;
-        }
-    }
-    @media (max-width: 992px) {
-        #sidebar-wrapper {
-            position: static;
-            height:auto;
-            max-height: 300px;
-            border-right:0;
-        }
-    }
-
-    </style>
-</head>
-<body>
-
-    <div id="header" class="page-header">
-     <h1>Homelette</h1>
-     <p> From the best chef's in the world directly into your kitchen </p>
- </div>
-
- <div id="wrapper"> 
-  <div id="sidebar-wrapper" class="col-md-3">
-    <div id="sidebar">
-        <ul class="nav list-group">
-            <li>
-                <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 1</a>
-            </li>
-            <li>
-                <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 2</a>
-            </li>
-            <li>
-                <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 9</a>
-            </li>
-            <li>
-                <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 10</a>
-            </li>
-            <li>
-                <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 11</a>
-            </li>
-        </ul>
+    <link rel="stylesheet" href="css.css">
+  </head>
+  <body>
+    <!--header-->
+    <div id="header" class="container-fluid">
+      <h1>Homelette</h1>
+      <p id="citation"> From the best chef's in the world directly into your kitchen </p>
     </div>
-</div>
 
-<div id="main-wrapper" class="col-md-9 pull-right">
-    <div id="main">
-      <div class="page-header" id="searchHeader">
-        <h3>Admin</h3>
-    </div>
-    <div id="bajs">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget magna et ante suscipit lacinia. Aenean porttitor velit id pretium blandit. Aenean ut sodales ante. Ut faucibus ornare venenatis. Duis sit amet arcu eros. Mauris volutpat vestibulum congue. Nam volutpat, urna eu varius dapibus, velit nisl bibendum lorem, sit amet dapibus sem dolor eu felis.Nulla tincidunt augue vel dolor convallis lobortis. Nunc nibh dolor, tincidunt elementum lorem id, porta imperdiet neque. Quisque egestas lacus nec magna mattis aliquam. Nunc eget orci odio. Quisque neque odio, lobortis a orci ut, tempus feugiat tortor. Quisque et tincidunt arcu. Sed vel accumsan risus. Quisque enim ipsum, luctus vitae ultrices at, vulputate eu lorem. Curabitur at nibh sagittis, lobortis odio nec, sodales velit. Aenean interdum, magna nec molestie congue, magna nisi sodales dolor, at mattis ipsum nisi at nibh. Aenean quis dictum lacus. Vivamus commodo sit amet nibh eget scelerisque. Duis consequat fringilla mollis. Sed eros risus, sodales in porttitor bibendum, vulputate ut est.
+    <div id="wrapper">
+    <!-- sidebar-->
+      <div id="sidebar-wrapper" class="col-sm-3">
+        <h3>My dinner</h3>
+        <hr>
+        <div id ="menuView">
+          Number of guests:
+          <span id="numberOfGuests"></span>
+          <button id="minusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-minus"></span></button>
+          <button id="plusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+        
 
-            Mauris in ullamcorper sapien. Morbi imperdiet consequat luctus. Donec vestibulum dapibus libero elementum posuere. Quisque posuere ipsum turpis, nec porttitor eros lobortis vel. Proin porttitor consequat adipiscing. Proin posuere orci odio, in pellentesque elit dapibus eu. Sed aliquam mollis hendrerit. Sed quis sapien nisl. Duis a bibendum tortor, nec malesuada justo. Sed luctus lorem nec velit consequat, vel ultricies lorem pulvinar. Mauris leo sapien, fermentum vel eleifend at, cursus quis massa. Ut sit amet venenatis orci, a dictum elit. Praesent a feugiat risus, non venenatis urna. Curabitur nisi sapien, facilisis vitae scelerisque nec, lacinia vel ante. Fusce tristique justo vitae mi lacinia, non interdum erat ultrices. Proin nec tempus odio, suscipit consequat lacus.
+        <!-- menu -->
+          <table class="table" style='margin-top: 15px;' id="menuTable">
+            <thead style='background-color: #f6f6f6;'>
+              <tr>
+                <th>Dish Name</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>SEK <span id="totalCost"></span></td>
+              </tr>
+            </tbody>
+          </table>
 
-            Cras aliquet tempus libero, quis mattis ipsum. Nam justo odio, mollis at bibendum in, condimentum nec mi. Ut auctor consectetur erat, eget bibendum erat tristique ac. Nullam nisl sapien, pretium at enim nec, tincidunt molestie lacus. Mauris venenatis augue velit, eu malesuada velit faucibus id. Suspendisse ac suscipit magna. Integer elit risus, rutrum a mi vitae, pharetra tristique mi. Ut semper euismod lacus vel dignissim. Maecenas quis erat eget dui vehicula aliquam.
+          <div class="text-center">
+            <botton type="botton" class="btn btn-default">Confirm dinner</botton> 
+          </div>
+        </div>
+      </div>   
+           
 
-            Praesent sed dolor euismod, condimentum ante quis, molestie orci. Ut vel venenatis nunc, ut porta lacus. Donec ligula felis, tristique ut sollicitudin eget, commodo vel augue. Maecenas quis enim ac elit bibendum tristique. Suspendisse a vestibulum dui. Donec molestie enim vel ornare fermentum. Etiam suscipit, velit et dapibus dapibus, metus tellus convallis nulla, sit amet pharetra magna nunc id mauris. In eget nunc eleifend, aliquet urna sed, viverra ipsum. Quisque fringilla non eros vitae sollicitudin. Pellentesque non nisl est. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget magna et ante suscipit lacinia. Aenean porttitor velit id pretium blandit. Aenean ut sodales ante. Ut faucibus ornare venenatis. Duis sit amet arcu eros. Mauris volutpat vestibulum congue. Nam volutpat, urna eu varius dapibus, velit nisl bibendum lorem, sit amet dapibus sem dolor eu felis.
-
-            Nulla tincidunt augue vel dolor convallis lobortis. Nunc nibh dolor, tincidunt elementum lorem id, porta imperdiet neque. Quisque egestas lacus nec magna mattis aliquam. Nunc eget orci odio. Quisque neque odio, lobortis a orci ut, tempus feugiat tortor. Quisque et tincidunt arcu. Sed vel accumsan risus. Quisque enim ipsum, luctus vitae ultrices at, vulputate eu lorem. Curabitur at nibh sagittis, lobortis odio nec, sodales velit. Aenean interdum, magna nec molestie congue, magna nisi sodales dolor, at mattis ipsum nisi at nibh. Aenean quis dictum lacus. Vivamus commodo sit amet nibh eget scelerisque. Duis consequat fringilla mollis. Sed eros risus, sodales in porttitor bibendum, vulputate ut est.
-
-            Mauris in ullamcorper sapien. Morbi imperdiet consequat luctus. Donec vestibulum dapibus libero elementum posuere. Quisque posuere ipsum turpis, nec porttitor eros lobortis vel. Proin porttitor consequat adipiscing. Proin posuere orci odio, in pellentesque elit dapibus eu. Sed aliquam mollis hendrerit. Sed quis sapien nisl. Duis a bibendum tortor, nec malesuada justo. Sed luctus lorem nec velit consequat, vel ultricies lorem pulvinar. Mauris leo sapien, fermentum vel eleifend at, cursus quis massa. Ut sit amet venenatis orci, a dictum elit. Praesent a feugiat risus, non venenatis urna. Curabitur nisi sapien, facilisis vitae scelerisque nec, lacinia vel ante. Fusce tristique justo vitae mi lacinia, non interdum erat ultrices. Proin nec tempus odio, suscipit consequat lacus.
-
-            Cras aliquet tempus libero, quis mattis ipsum. Nam justo odio, mollis at bibendum in, condimentum nec mi. Ut auctor consectetur erat, eget bibendum erat tristique ac. Nullam nisl sapien, pretium at enim nec, tincidunt molestie lacus. Mauris venenatis augue velit, eu malesuada velit faucibus id. Suspendisse ac suscipit magna. Integer elit risus, rutrum a mi vitae, pharetra tristique mi. Ut semper euismod lacus vel dignissim. Maecenas quis erat eget dui vehicula aliquam.
-
-            Praesent sed dolor euismod, condimentum ante quis, molestie orci. Ut vel venenatis nunc, ut porta lacus. Donec ligula felis, tristique ut sollicitudin eget, commodo vel augue. Maecenas quis enim ac elit bibendum tristique. Suspendisse a vestibulum dui. Donec molestie enim vel ornare fermentum. Etiam suscipit, velit et dapibus dapibus, metus tellus convallis nulla, sit amet pharetra magna nunc id mauris. In eget nunc eleifend, aliquet urna sed, viverra ipsum. Quisque fringilla non eros vitae sollicitudin. Pellentesque non nisl est. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget magna et ante suscipit lacinia. Aenean porttitor velit id pretium blandit. Aenean ut sodales ante. Ut faucibus ornare venenatis. Duis sit amet arcu eros. Mauris volutpat vestibulum congue. Nam volutpat, urna eu varius dapibus, velit nisl bibendum lorem, sit amet dapibus sem dolor eu felis.
-
-            Nulla tincidunt augue vel dolor convallis lobortis. Nunc nibh dolor, tincidunt elementum lorem id, porta imperdiet neque. Quisque egestas lacus nec magna mattis aliquam. Nunc eget orci odio. Quisque neque odio, lobortis a orci ut, tempus feugiat tortor. Quisque et tincidunt arcu. Sed vel accumsan risus. Quisque enim ipsum, luctus vitae ultrices at, vulputate eu lorem. Curabitur at nibh sagittis, lobortis odio nec, sodales velit. Aenean interdum, magna nec molestie congue, magna nisi sodales dolor, at mattis ipsum nisi at nibh. Aenean quis dictum lacus. Vivamus commodo sit amet nibh eget scelerisque. Duis consequat fringilla mollis. Sed eros risus, sodales in porttitor bibendum, vulputate ut est.
-
-            Mauris in ullamcorper sapien. Morbi imperdiet consequat luctus. Donec vestibulum dapibus libero elementum posuere. Quisque posuere ipsum turpis, nec porttitor eros lobortis vel. Proin porttitor consequat adipiscing. Proin posuere orci odio, in pellentesque elit dapibus eu. Sed aliquam mollis hendrerit. Sed quis sapien nisl. Duis a bibendum tortor, nec malesuada justo. Sed luctus lorem nec velit consequat, vel ultricies lorem pulvinar. Mauris leo sapien, fermentum vel eleifend at, cursus quis massa. Ut sit amet venenatis orci, a dictum elit. Praesent a feugiat risus, non venenatis urna. Curabitur nisi sapien, facilisis vitae scelerisque nec, lacinia vel ante. Fusce tristique justo vitae mi lacinia, non interdum erat ultrices. Proin nec tempus odio, suscipit consequat lacus.
-
-            Cras aliquet tempus libero, quis mattis ipsum. Nam justo odio, mollis at bibendum in, condimentum nec mi. Ut auctor consectetur erat, eget bibendum erat tristique ac. Nullam nisl sapien, pretium at enim nec, tincidunt molestie lacus. Mauris venenatis augue velit, eu malesuada velit faucibus id. Suspendisse ac suscipit magna. Integer elit risus, rutrum a mi vitae, pharetra tristique mi. Ut semper euismod lacus vel dignissim. Maecenas quis erat eget dui vehicula aliquam.
-
-            Praesent sed dolor euismod, condimentum ante quis, molestie orci. Ut vel venenatis nunc, ut porta lacus. Donec ligula felis, tristique ut sollicitudin eget, commodo vel augue. Maecenas quis enim ac elit bibendum tristique. Suspendisse a vestibulum dui. Donec molestie enim vel ornare fermentum. Etiam suscipit, velit et dapibus dapibus, metus tellus convallis nulla, sit amet pharetra magna nunc id mauris. In eget nunc eleifend, aliquet urna sed, viverra ipsum. Quisque fringilla non eros vitae sollicitudin. Pellentesque non nisl est. Suspendisse potenti.</p>
+        <!-- main -->
+        <div id="main-wrapper" class="col-sm-9 pull-right">
+          <div id="main">
+            <div id="dishView">
+              
+            </div> <!--Slut-->
+          </div>                  
         </div>
     </div>
+  </div>
 
-</div>
-</div>
-</body>
+    <!-- jQuery -->
+    <!--<script src="https://code.jquery.com/jquery.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+  <!-- The application JavaScript code -->
+  <script src="js/app.js"></script>
+  <script src="js/model/dinnerModel.js"></script>
+  <script src="js/view/menuView.js"></script>
+  <script src="js/view/dishView.js"></script>
+  <script src="js/view/exampleViewController.js"></script>
+  </body>
 </html>

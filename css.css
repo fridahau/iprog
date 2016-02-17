@@ -43,8 +43,7 @@ body {
       }
 
 
-      #right,
-      .table td + td, .table th + th {
+      #menuTable td + td, #menuTable th + th {
           text-align:right;
       }
 

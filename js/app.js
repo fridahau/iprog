@@ -4,6 +4,8 @@ $(function() {
 	
 	//And create the needed controllers and views
 	var menuView = new MenuView($("#menuView"), model);
-	var selectDishView = SelectDishView($("#selectDishView"), model);
 
+	var dishView = new DishView($("#dishView"), model);
+	var selectDishView = new SelectDishView($("#selectDishView"), model);
+	
 });

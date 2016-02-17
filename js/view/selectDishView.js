@@ -3,7 +3,7 @@ var SelectDishView = function (container, model) {
 	
 	// Get all the relevant elements of the view (ones that show data
   // and/or ones that responed to interaction)
-	this.searchField = container.find("#searcField");
+	this.searchField = container.find("#searchField");
 	this.searchButton = container.find("#searchButton");
 	this.dropDown = container.find("#dropDown");
 	var displayDishes = container.find("#displayDishes");
