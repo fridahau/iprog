@@ -15,7 +15,7 @@ var DishView = function (container, model) {
 	
 	var loadDish = function(dish){
 		dishName.html(dish.name);
-		dishImage.html('<img src="images/'+dish.image+'">');
+		dishImage.html('<img src="images/'+dish.image+'" class="img-thumbnail">');
 		dishDescription.html(dish.description);
 		dishPreparation.html(dish.description);
 

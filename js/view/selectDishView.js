@@ -28,7 +28,7 @@ var SelectDishView = function (container, model) {
 				dishImage = o.image;
 				dishDescription = o.description;
 				//displayDishes.append('<div class="col-sm-3"><img src="'+dishImage+'"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>');
-				result += '<div class="col-sm-3"><img src="images/'+dishImage+'"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>';
+				result += '<div class="col-sm-3"><img src="images/'+dishImage+'" class="img-thumbnail"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>';
 				
 			});
 
@@ -41,7 +41,7 @@ var SelectDishView = function (container, model) {
 					dishName = dishes[counter].name;
 					dishImage = dishes[counter].image;
 					dishDescription = dishes[counter].description;
-					result += '<div class="col-sm-3"><img src="images/'+dishImage+'"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>';
+					result += '<div class="col-sm-3"><img src="images/'+dishImage+'" class="img-thumbnail><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>';
 					counter++;
 				}
 				result += '</div>';
