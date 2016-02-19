@@ -71,22 +71,25 @@ var DinnerModel = function() {
 		}];
 
 	//var menu = [];
-	var observers = [];
+	this.observers = [];
 
-	//Add new observer to the array
-	this.addObserver = function(observer) {
-		observers.push(observer);
-	} 
+	this.addObserver = function(observer){
+		this.observers.push(observer);
+	}
 
-	// call the update method on all the observers in the array
-	var notifyObservers = function(obj) {
-
+	this.notifyObservers = function(arg) {
+		for(var i=0; i<this.observers.length; i++) {
+			this.observers[i].update(arg);
+		}	
 	}
 
 
 	// sets the number of guests
 	this.setNumberOfGuests = function(num) {
-		numberOfGuests = num;
+		if(num >= 0) {
+			numOfGuests = num;
+			this.notifyObservers();
+		}
 	}
 
 	// should return 

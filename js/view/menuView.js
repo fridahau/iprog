@@ -11,33 +11,28 @@ var MenuView = function (container, model) {
 	this.totalCost = container.find("#totalCost");
 
 	
-	this.numberOfGuests.html(model.getNumberOfGuests());
-
-	
 	var loadMenu = function() {
+		menuTable.find('tbody').html(''); //clear menu
 		var menu = model.getFullMenu();
 		$.each(menu, function(i, o){
 			var name = o.name;
 			var id = o.id;
 			var price = model.getDishCost(id);
 
-
 			menuTable.find('tbody').prepend('<tr><td>'+name+'</td><td>'+price+'</td></tr>');
 		});
-		
 	}
 	
 
 	// The observer update function, triggered by the model when there are changes
-	this.update = function() {
+	this.update = function(){
+		this.numberOfGuests.html(model.getNumberOfGuests());
 		loadMenu();
 	}
 
-
+	this.numberOfGuests.html(model.getNumberOfGuests());
 	loadMenu();
-
-
-
+	model.addObserver(this);
 	this.totalCost.html(model.getTotalMenuPrice());
 
 }
