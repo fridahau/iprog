@@ -13,7 +13,7 @@ var SelectDishView = function (container, model) {
 
 	//Math.ceil(x) round to the next whole number
 	var filerDishes = function(){
-		var dishes = model.getAllDishes("dessert");
+		var dishes = model.getAllDishes("starter");
 		var counter = 0;
 		var result = "";
 		var dishImage ="";

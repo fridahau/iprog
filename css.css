@@ -9,7 +9,7 @@ body {
 h1 {
   margin-top: 30px;
   color: #303030;
-    font-weight: 600;
+  font-weight: 600;
 }
 
 h3 {
@@ -20,20 +20,20 @@ hr {
   border-color: #000;
 }
 
-        #citation {
-          padding: 0px;
-        }
+#citation {
+  padding: 0px;
+}
 
-        #header {
-          height: 135px;
-          background-color: #EEEEEE;
-        }
+#header {
+  height: 135px;
+  background-color: #EEEEEE;
+}
 
-        #wrapper {
-          min-height: 100%;
-          height: 100%;
-          width: 100%;
-          position: absolute;
+#wrapper {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
           top: 0px;
           left: 0;
           display: inline-block;
@@ -48,12 +48,14 @@ hr {
           height: 100%;
           padding: 135px 0 0px 0;
           margin: 0 0 200px 0;
+          overflow-y: auto;
         }
 
         #main {
             position: relative;
             height: 100%;
             padding: 0 15px;
+            overflow-y: auto;
         }
 
         #displayDishes {

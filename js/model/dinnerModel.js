@@ -3,7 +3,7 @@ var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 
-	var numOfGuests = 1;
+	var numOfGuests = 2;
 	var menu = [{
 		'id':1,
 		'name':'French toast',
@@ -71,7 +71,17 @@ var DinnerModel = function() {
 		}];
 
 	//var menu = [];
+	var observers = [];
 
+	//Add new observer to the array
+	this.addObserver = function(observer) {
+		observers.push(observer);
+	} 
+
+	// call the update method on all the observers in the array
+	var notifyObservers = function(obj) {
+
+	}
 
 
 	// sets the number of guests

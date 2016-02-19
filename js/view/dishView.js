@@ -28,7 +28,7 @@ var DishView = function (container, model) {
 		$.each(ingList, function(i, o){
 			var people = model.getNumberOfGuests();
 			
-			dishIngredients.find('tbody').prepend('<tr><td>'+o.quantity*people+' '+o.unit+'</td><td>'+o.name+'</td><td>SEK '+o.price+'</td></tr>');
+			dishIngredients.find('tbody').prepend('<tr><td>'+o.quantity*people+' '+o.unit+'</td><td>'+o.name+'</td><td>SEK '+o.price*people+'</td></tr>');
 		});
 	}
 	var test = {
