@@ -18,36 +18,26 @@
         background-size: cover;
       }
 
-      #homeScreenView{
-        margin: 15px;
-      }
-
-      .well {
-        background-color: rgba(245, 245, 245, 0.9);
-        border: none;
-      }
-
-      #header {
-        height: 135px;
-        background-color: rgba(255, 229, 153, 0.9);
-      }
+      
+      
     </style>
 
   </head>
   <body>
     <!--header-->
-    <div id="header" class="container-fluid">
+    <div id="header2" class="container-fluid">
       <h1>Homelette</h1>
       <p id="citation"> From the best chef's in the world directly into your kitchen </p>
     </div>
 
-    <div id="homeScreenView">
+    <!--homeScreenView-->
+    <div id="homeScreenView" style='margin: 15px;'>
       <div class="row">
         <div class="col-lg-6">
           <div class="well">
             <h3>A Home Dinner Service</h3>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit pharetra enim nec mattis. Ut elementum semper leo, eu faucibus tortor. Quisque sed mollis est. Aenean rutrum blandit sapien et volutpat. Cras ultricies id sem in iaculis. Nullam nulla lacus, tincidunt et congue quis, maximus a dui. Morbi non turpis sapien. Cras fermentum malesuada purus non auctor. Vivamus et nisl odio. Etiam nec orci vitae sapien sagittis scelerisque. Quisque eget augue varius, dictum sapien ut, porttitor augue. Nulla nec aliquam est. Praesent non turpis ut est lobortis viverra. Aliquam erat volutpat.</p>
+            <p id="welcomeText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit pharetra enim nec mattis. Ut elementum semper leo, eu faucibus tortor. Quisque sed mollis est. Aenean rutrum blandit sapien et volutpat. Cras ultricies id sem in iaculis. Nullam nulla lacus, tincidunt et congue quis, maximus a dui. Morbi non turpis sapien. Cras fermentum malesuada purus non auctor. Vivamus et nisl odio. Etiam nec orci vitae sapien sagittis scelerisque. Quisque eget augue varius, dictum sapien ut, porttitor augue. Nulla nec aliquam est. Praesent non turpis ut est lobortis viverra. Aliquam erat volutpat.</p>
             <p>Start quickly</p>
             <botton type="botton" class="btn btn-default" id="enter">Create new dinner</botton>  
           </div>
@@ -55,7 +45,110 @@
 
         <div class="col-lg-6"></div>
       </div>
+    </div><!--end homeScreenView-->
+
+    <!--header-->
+    <div id="header" class="container-fluid">
+      <h1>Homelette</h1>
+      <p id="citation"> From the best chef's in the world directly into your kitchen </p>
     </div>
+
+    <!--wrapper-->
+    <div id="wrapper">
+      <div id ="menuView">
+        <div id="sidebar-wrapper" class="col-sm-3">
+          <h3>My dinner</h3>
+          <hr>
+          <div class="row">
+            <div class="col-sm-6">
+              Number of guests: 
+            </div>
+            <div class="col-sm-6">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default btn-number btn-sm" id="minusGuest">
+                    <span class="glyphicon glyphicon-minus"></span>
+                  </button>
+                </span>
+                <input type="text" id="numberOfGuests"class="form-control input-number input-sm" value="1">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default btn-number btn-sm" id="plusGuest">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--
+          <span id="numberOfGuests"></span>
+          <button id="minusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-minus"></span></button>
+          <button id="plusGuest" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span></button>-->
+        
+
+          <!-- menu -->
+          <table class="table" style='margin-top: 15px;' id="menuTable">
+            <thead style='background-color: #f6f6f6;'>
+              <tr>
+                <th>Dish Name</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td>SEK <span id="totalCost"></span></td>
+              </tr>
+            </tfoot>
+          </table>
+          <div class="text-center">
+            <botton type="botton" class="btn btn-default">Confirm dinner</botton> 
+          </div>
+        </div>
+      </div><!--end menuView-->
+           
+      <!-- selectDishView -->
+      <div id="main-wrapper" class="col-sm-9 pull-right">
+        <div id="main">
+          <div id="selectDishView">
+            <!-- main header -->
+            <div id="searchHeader">
+              <h3>Select dish</h3>
+              <hr>
+              <!-- search -->
+              <div id="searchBar" class="col-sm-5">
+                <form class="navbar-form navbar-left" role="search" id="searchBar">
+                  <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Search" id="searchField">
+                  </div> 
+                  <button type="submit" class="btn btn-default btn-sm" id="searchButton"><span class="glyphicon glyphicon-search"></span></button>
+                </form>
+              </div><!--end search-->
+
+              <!--filter-->
+              <div id="filterGroup" class="col-sm-4">
+                Filter:
+                <div class="btn-group" id="filterBar">
+                  <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    All <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" id="dropDown">
+                    <li><a href="#">Starter</a></li>
+                    <li><a href="#">Main course</a></li>
+                    <li><a href="#">Desert</a></li>
+                  </ul>
+                </div>
+              </div> <!--end filter-->
+            </div><!--end searchHeader-->
+              
+            <!-- Content -->
+            <div id="displayDishes">
+            </div><!--end displayDishes-->
+          </div>
+          </div><!--end main-->                
+      </div><!--end main-wrapper-->
+    </div><!--end wrapper-->
 
     <!-- jQuery -->
     <!--<script src="https://code.jquery.com/jquery.js"></script> -->
@@ -64,10 +157,16 @@
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-  <!-- The application JavaScript code -->
-  <script src="js/app.js"></script>
-  <script src="js/model/dinnerModel.js"></script>
-  <script src="js/view/homeScreenView.js"></script>
-  <script src="js/view/homeScreenCtrl.js"></script>
+    <!-- The application JavaScript code -->
+    <script src="js/app.js"></script>
+    <script src="js/model/dinnerModel.js"></script>
+
+    <script src="js/view/homeScreenView.js"></script>
+    <script src="js/controller/homeScreenController.js"></script>
+
+    <script src="js/view/menuView.js"></script>
+    <script src="js/controller/menuController.js"></script>
+
+    <script src="js/view/selectDishView.js"></script>
   </body>
 </html>

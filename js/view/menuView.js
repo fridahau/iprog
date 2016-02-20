@@ -26,14 +26,17 @@ var MenuView = function (container, model) {
 
 	// The observer update function, triggered by the model when there are changes
 	this.update = function(){
-		this.numberOfGuests.html(model.getNumberOfGuests());
+		this.totalCost.html(model.getTotalMenuPrice());
 		loadMenu();
+
+		this.numberOfGuests.val(model.getNumberOfGuests());
 	}
 
-	this.numberOfGuests.html(model.getNumberOfGuests());
+	this.numberOfGuests.val(model.getNumberOfGuests());
 	loadMenu();
-	model.addObserver(this);
 	this.totalCost.html(model.getTotalMenuPrice());
+	
+	model.addObserver(this);
 
 }
  

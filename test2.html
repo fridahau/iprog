@@ -71,47 +71,16 @@
           </div>
         </div>
       </div><!--end menuView-->
-           
-      <!-- selectDishView -->
-      <div id="main-wrapper" class="col-sm-9 pull-right">
-        <div id="main">
-          <div id="selectDishView">
-            <!-- main header -->
-            <div id="searchHeader">
-              <h3>Select dish</h3>
-              <hr>
-              <!-- search -->
-              <div id="searchBar" class="col-sm-5">
-                <form class="navbar-form navbar-left" role="search" id="searchBar">
-                  <div class="form-group">
-                    <input type="text" class="form-control input-sm" placeholder="Search" id="searchField">
-                  </div> 
-                  <button type="submit" class="btn btn-default btn-sm" id="searchButton"><span class="glyphicon glyphicon-search"></span></button>
-                </form>
-              </div><!--end search-->
-
-              <!--filter-->
-              <div id="filterGroup" class="col-sm-4">
-                Filter:
-                <div class="btn-group" id="filterBar">
-                  <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    All <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" id="dropDown">
-                    <li><a href="#">Starter</a></li>
-                    <li><a href="#">Main course</a></li>
-                    <li><a href="#">Desert</a></li>
-                  </ul>
-                </div>
-              </div> <!--end filter-->
-            </div><!--end searchHeader-->
-              
-            <!-- Content -->
-            <div id="displayDishes">
-            </div><!--end displayDishes-->
-          </div>
-        </div><!--end main-->                
-      </div><!--end main-wrapper-->
+      
+      <div id="selectDishView">
+        <div id="main-wrapper" class="col-sm-9 pull-right">
+          <div id="main">
+            <div id="displayMenu">
+              test
+            </div>
+          </div><!--main-->
+        </div><!--main-wrapper-->
+      </div> <!-- selectDishView-->
     </div><!--end wrapper-->
   
 
@@ -127,6 +96,6 @@
     <script src="js/model/dinnerModel.js"></script>
     <script src="js/view/menuView.js"></script>
     <script src="js/view/selectDishView.js"></script>
-    <script src="js/controller/menuController.js"></script>
+    <script src="js/controller/menuViewController.js"></script>
   </body>
 </html>

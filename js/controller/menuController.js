@@ -1,4 +1,4 @@
-var MenuViewController = function(view, model) { 
+var MenuController = function(view, model) { 
  view.plusButton.click(function(){
  	model.setNumberOfGuests(model.getNumberOfGuests() + 1);
  });

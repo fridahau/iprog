@@ -9,6 +9,7 @@ var InstructionView = function (container, model) {
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
 	var loadMenu = function(){
+		menuList.html(''); //clear
 		var menu = model.getFullMenu();
 
 		$.each(menu, function(i, o){

@@ -1,5 +1,5 @@
 //ExampleView Object constructor
-var DinnerView = function (container, model) {
+var OverviewView = function (container, model) {
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.editDinnerBtn = container.find("#editDinner");
 	var menuList = container.find("#menuList");

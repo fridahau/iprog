@@ -9,25 +9,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css.css">
-    <style>
-      .padding{
-        display: inline-block;
-        padding: 0px 15px 15px 15px;
-      }   
-
-      #miniHeader{
-      	background-color: #FFE599;
-      	margin: 0px;
-      }
-
-      .table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td {
-        border-top: none;
-      }
-
-      img {
-        margin-top: 15px;
-      }
-    </style>
   </head>
   <body>
     <!--header-->
@@ -36,38 +17,44 @@
       <p id="citation"> From the best chef's in the world directly into your kitchen </p>
     </div>
 
-    <div id="wrap">
-      <div id="dinnerView">
-        <div class="row">
-          <div class="col-lg-12" id="miniHeader">
-            <h3 class="padding">My dinner: <span id="numberOfGuests"></span> people</h3>
-            <button id="editDinner" class="btn btn-default" style='margin-left: 15px'>Go back and edit dinner</button>
-            </br>
-          </div>        
-        </div>
+    <!--wrapper-->
+    <div id="overviewView">
+      <div id="wrapper">    
+        <div id="main-wrapper" class="col-sm-12">
+          <div id="main">
+            <!-- main header -->
+            <div id="searchHeader">
+              <h3 class="padding">My dinner: <span id="numberOfGuests"></span> people</h3>
+              <button id="editDinner" class="btn btn-default" style='margin-left: 15px'>Go back and edit dinner</button>
+              </br>
+            </div><!--end searchHeader-->
+              
+            <!-- Content -->
+            <div id="displayMenu">  
+              <div class="row" style='margin-top: 15px;'>            
+                <div class="col-lg-9" style='text-align: right;'>
+                  <table class="table" id="menuList">
+                    <thead></thead>
+                    <tbody>
+                    </tbody>    
+                  </table>
+                </div>
 
-        <div class="row">
-          <div class="col-lg-9" style='text-align: right;'>
-            <table class="table" id="menuList">
-              <thead></thead>
-              <tbody>
-              </tbody>    
-            </table>
-          </div>
+                <div class="col-lg-3" >
+                  <p><b>Total</b></p>
+                  <p>SEK <span id="totalPrice"></span></p>
+                </div>
+              </div>
 
-          <div class="col-lg-3" >
-            <p><b>Total</b></p>
-            <p>SEK <span id="totalPrice"></span></p>
-          </div>
-        </div>
-
-        <div class="row text-center">
-          <button id="printRecipe" class="btn btn-default">Print full recipe</button>
-        </div>
-      </div>
+              <div class="row text-center">
+                <button id="printRecipe" class="btn btn-default">Print full recipe</button>
+              </div>
+            </div><!--end displayDishes-->
+          </div><!--end main-->                
+        </div><!--end main-wrapper-->
+      </div><!--end wrapper-->
     </div>
-   
-   
+  
 
     <!-- jQuery -->
     <!--<script src="https://code.jquery.com/jquery.js"></script> -->
@@ -79,7 +66,7 @@
     <!-- The application JavaScript code -->
     <script src="js/app.js"></script>
     <script src="js/model/dinnerModel.js"></script>
-    <script src="js/view/dinnerView.js"></script>
-    <script src="js/view/exampleViewController.js"></script>
+    <script src="js/view/overviewView.js"></script>
+    <script src="js/controller/menuViewController.js"></script>
   </body>
 </html>
