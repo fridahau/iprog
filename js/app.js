@@ -3,12 +3,12 @@ $(function() {
 	var model = new DinnerModel();
 	
 	//HomeScreen
-	//var homeScreenView = new HomeScreenView($("#homeScreenView"), model);
-	//var homeScreenController = new HomeScreenController(homeScreenView, model);
+	var homeScreenView = new HomeScreenView($("#homeScreenView"), model);
+	var homeScreenController = new HomeScreenController(homeScreenView, model);
 
 	//Menu
-	//var menuView = new MenuView($("#menuView"), model);
-	//var menuController = new MenuController(menuView, model);
+	var menuView = new MenuView($("#menuView"), model);
+	var menuController = new MenuController(menuView, model);
 	
 	//var selectDishView = new SelectDishView($("#selectDishView"), model);
 
