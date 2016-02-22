@@ -10,7 +10,7 @@ var SelectDishView = function (container, model) {
 
 	//Math.ceil(x) round to the next whole number
 	var filerDishes = function(){
-		var dishes = model.getAllDishes("starter");
+		var dishes = model.getAllDishes("main dish");
 		var counter = 0;
 		var result = "";
 		var dishImage ="";
@@ -25,7 +25,9 @@ var SelectDishView = function (container, model) {
 				dishImage = o.image;
 				dishDescription = o.description;
 				//displayDishes.append('<div class="col-sm-3"><img src="'+dishImage+'"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>');
-				result += '<div class="col-sm-3"><img src="images/'+dishImage+'" class="img-thumbnail"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>';
+				//result += '<div class="col-sm-3"><img src="images/'+dishImage+'" class="img-thumbnail"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>';
+
+				result += '<div class="col-sm-3"><a href="#" class="thumbnail"><img src="images/'+dishImage+'"style="width:100%; height: auto; display: block;"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div></a>';
 				
 			});
 

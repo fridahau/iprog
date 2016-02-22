@@ -7,17 +7,28 @@ body {
 
 h1 {
   margin-top: 30px;
-  color: #303030;
+  color: #434A54;
   font-weight: 600;
 }
 
 h3 {
-  color: #303030;
+  color: #434A54;
 }  
 
 hr {
   border-color: #000;
 }
+
+.btn-warning{
+  border-color: #F6BB42;
+  background-color: #F6BB42;
+}
+
+.btn-warning:hover{
+  border-color: #FFCE54;
+  background-color: #FFCE54;
+}
+
 
 #citation {
   padding: 0px;
@@ -25,12 +36,12 @@ hr {
 
 #header {
   height: 135px;
-  background-color: #EEEEEE;
+  background-color: #E6E9ED;
 }
 
 #header2 {
   height: 135px;
-  background-color: rgba(255, 229, 153, 0.9);
+  background-color: rgba(255, 221, 135, 0.9);
 }
 
 #wrapper {
@@ -91,7 +102,7 @@ hr {
   right: 0;
   top: 0;
   padding: 0 15px 15px 15px;
-  background-color: #FFE599;
+  background-color: #FFDD87;
 }
 
 .padding{

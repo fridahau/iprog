@@ -10,9 +10,9 @@ $(function() {
 	var menuView = new MenuView($("#menuView"), model);
 	var menuController = new MenuController(menuView, model);
 	
-	//var selectDishView = new SelectDishView($("#selectDishView"), model);
+	var selectDishView = new SelectDishView($("#selectDishView"), model);
 
-	var dishView = new DishView($("#dishView"), model);
+	//var dishView = new DishView($("#dishView"), model);
 	//var instructionView = new InstructionView($("#instructionView"), model);
 	//var overviewView = new OverviewView($("#overviewView"), model);
 	

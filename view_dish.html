@@ -10,8 +10,22 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css.css">
     <style>
-    	#dishIngredients{
-        text-align: left;
+    	#dishIngredients {
+        border:none;
+      }
+
+
+      .borderless {
+        border-top: 1px solid #000 !important;
+        margin: 0px;
+      }
+
+      .borderless > tfoot > tr > td{
+        border-top: 1px solid #000 !important;
+      }
+
+      .borderless td {
+        border-top: none !important;
       }
 
       img{
@@ -72,25 +86,23 @@
                  	<h3><span id="dishName">Ice Cream</span></h3>
   	           		<span id="dishImage"><img src="images/icecream.jpg"></span>
   	              <p><span id="dishDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros.</span></p>
-  	              <botton type="botton" class="btn btn-default" id="backButton">Back to Select Dish</botton>	
+  	              <botton type="botton" class="btn btn-warning" id="backButton">Back to Select Dish</botton>	
 
   	            </div>
 
   	            <!-- ingredients -->
-  	            <div class="col-sm-6">
+  	            <div class="col-sm-6" style='background-color: #FFDD87; '>
   	            	<h3>Ingredients for <span id="numberOfGuests"></span> people</h3>   
 
-  	            	<table class="table" id="dishIngredients">
+  	            	<table class="table borderless" id="dishIngredients">
   	            		<thead></thead>
                     <tbody>    	            		
                     </tbody>
                     <tfoot>
-                      <td></td>
-                      <td></td>
+                      <td colspan="2"><botton type="button" class="btn btn-warning" id="confirmButton">Confirm dish</botton>  </td>
                       <td>SEK <span id="totalPrice"></span></td>
                     </tfoot>
   	            	</table>
-  	            	<botton type="botton" class="btn btn-default" id="confirmButton">Confirm dish</botton>	
 
   	            </div>
    	          </div>
