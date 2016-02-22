@@ -13,6 +13,7 @@ var HomeScreenView = function (container, model) {
 		container.hide();
 		$("#header").show();
 		$("#wrapper").show();
+
 		$("body").css({"background": "none"});
 	}
 

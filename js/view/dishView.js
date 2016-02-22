@@ -11,25 +11,31 @@ var DishView = function (container, model) {
 	var dishPreparation = container.find("#dishPreparation");
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
+
+	this.update = function(){
+		var activeDish = model.getActiveDish();
+		this.loadDish(activeDish);
+	}
 	
-	var loadDish = function(dish){
+	this.loadDish = function(dish){
 		dishName.html(dish.name);
 		dishImage.html('<img src="images/'+dish.image+'" class="img-thumbnail">');
 		dishDescription.html(dish.description);
 		dishPreparation.html(dish.description);
 
 		var dishIng = dish.ingredients;
-		loadIngredients(dishIng);
+		this.loadIngredients(dishIng);
 		totalPrice.html(model.getDishCost(dish.id));
 	}
 
-	var loadIngredients = function(ingList){
+	this.loadIngredients = function(ingList){
 		$.each(ingList, function(i, o){
 			var people = model.getNumberOfGuests();
 			
 			dishIngredients.find('tbody').append('<tr><td>'+o.quantity*people+' '+o.unit+'</td><td>'+o.name+'</td><td>SEK '+o.price*people+'</td></tr>');
 		});
 	}
+	
 	var test = {
 		'id':1,
 		'name':'French toast',
@@ -64,7 +70,9 @@ var DishView = function (container, model) {
 			}]
 		};
 
-	loadDish(test);
+
+	container.hide();
+	model.addObserver(this);
 	//loadIngredients(test.ingredients);
 
 	

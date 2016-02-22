@@ -143,8 +143,45 @@
             <!-- Content -->
             <div id="displayDishes">
             </div><!--end displayDishes-->
-          </div>
-          </div><!--end main-->                
+          </div><!-- end selectDishView-->
+
+          <div id="dishView">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h3><span id="dishName">Ice Cream</span></h3>
+                  <span id="dishImage"><img src="images/icecream.jpg"></span>
+                  <p><span id="dishDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros.</span></p>
+                  <botton type="botton" class="btn btn-warning" id="backButton">Back to Select Dish</botton>  
+
+                </div>
+
+                <!-- ingredients -->
+                <div class="col-sm-6" style='background-color: #FFDD87; '>
+                  <h3>Ingredients for <span id="numberOfGuests"></span> people</h3>   
+
+                  <table class="table borderless" id="dishIngredients">
+                    <thead></thead>
+                    <tbody>                     
+                    </tbody>
+                    <tfoot>
+                      <td colspan="2"><botton type="button" class="btn btn-warning" id="confirmButton">Confirm dish</botton>  </td>
+                      <td>SEK <span id="totalPrice"></span></td>
+                    </tfoot>
+                  </table>
+
+                </div>
+              </div>
+              </br>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <h3>Preparation</h3>
+                  <p id="dishPreparation">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue ex ligula, vitae malesuada diam iaculis vel. Ut nibh purus, volutpat a euismod eu, hendrerit quis eros.</p>
+                </div>
+              </div>
+            </div><!--end dishView-->
+
+        </div><!--end main-->                
       </div><!--end main-wrapper-->
     </div><!--end wrapper-->
 
@@ -166,5 +203,8 @@
     <script src="js/controller/menuController.js"></script>
 
     <script src="js/view/selectDishView.js"></script>
+    <script src="js/controller/selectDishController.js"></script>
+
+    <script src="js/view/dishView.js"></script>
   </body>
 </html>

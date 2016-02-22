@@ -1,12 +1,17 @@
 //ExampleView Object constructor
 var SelectDishView = function (container, model) {
-	
+
 	// Get all the relevant elements of the view (ones that show data
-  	// and/or ones that responed to interaction)
+		// and/or ones that responed to interaction)
 	this.searchField = container.find("#searchField");
 	this.searchButton = container.find("#searchButton");
 	this.dropDown = container.find("#dropDown");
 	var displayDishes = container.find("#displayDishes");
+
+	this.update = function () {
+		container.hide();
+		$("#dishView").show();
+	}
 
 	//Math.ceil(x) round to the next whole number
 	var filerDishes = function(){
@@ -16,7 +21,7 @@ var SelectDishView = function (container, model) {
 		var dishImage ="";
 		var dishName = "";
 		var dishDescription ="";
-		
+
 		if(dishes.length <= 4) {
 			//displayDishes.append('<div class=\"row text-center\">');
 			result += '<div class=\"row text-center\">';
@@ -28,7 +33,7 @@ var SelectDishView = function (container, model) {
 				//displayDishes.append('<div class="col-sm-3"><img src="'+dishImage+'"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>');
 				//result += '<div class="col-sm-3"><img src="images/'+dishImage+'" class="img-thumbnail"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>';
 
-				result += '<div class="col-sm-3"><a href="" class="thumbnail" value="'+dishId+'"><img src="images/'+dishImage+'"><h4>'+dishName+'</h4><p>'+dishDescription+'</p></div></a>';
+				result += '<div class="col-sm-3"><a class="thumbnail" value="'+dishId+'"><img src="images/'+dishImage+'"><h4>'+dishName+'</h4><p>'+dishDescription+'</p></div></a>';
 				
 			});
 
@@ -53,6 +58,7 @@ var SelectDishView = function (container, model) {
 	}
 
 	filerDishes();
+	model.addObserver(this);
 
 }
- 
+
