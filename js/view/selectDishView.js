@@ -22,12 +22,13 @@ var SelectDishView = function (container, model) {
 			result += '<div class=\"row text-center\">';
 			$.each(dishes, function(i, o){
 				dishName = o.name;
+				dishId = o.id;
 				dishImage = o.image;
 				dishDescription = o.description;
 				//displayDishes.append('<div class="col-sm-3"><img src="'+dishImage+'"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>');
 				//result += '<div class="col-sm-3"><img src="images/'+dishImage+'" class="img-thumbnail"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div>';
 
-				result += '<div class="col-sm-3"><a href="#" class="thumbnail"><img src="images/'+dishImage+'"style="width:100%; height: auto; display: block;"><h3>'+dishName+'</h3><p>'+dishDescription+'</p></div></a>';
+				result += '<div class="col-sm-3"><a href="" class="thumbnail" value="'+dishId+'"><img src="images/'+dishImage+'"><h4>'+dishName+'</h4><p>'+dishDescription+'</p></div></a>';
 				
 			});
 

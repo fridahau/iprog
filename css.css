@@ -29,9 +29,35 @@ hr {
   background-color: #FFCE54;
 }
 
+a.thumbnail{
+  width: 140px;
+  text-decoration: none;
+  border-color: #E6E9ED;
+  color: #434A54;
+}
+
+a.thumbnail:hover{
+  text-decoration: none;
+  border-color: #F5F7FA;
+  color: #AAB2BD;
+}
+
+.borderless {
+  border-top: 1px solid #000 !important;
+  margin: 0px;
+}
+
+.borderless > tfoot > tr > td{
+  border-top: 1px solid #000 !important;
+}
+
+.borderless td {
+  border-top: none !important;
+}
 
 #citation {
   padding: 0px;
+  font-style: italic; 
 }
 
 #header {
