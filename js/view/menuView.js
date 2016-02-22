@@ -31,6 +31,11 @@ var MenuView = function (container, model) {
 		this.numberOfGuests.val(model.getNumberOfGuests());
 	}
 
+	this.confirmFunc = function(){
+		$("#wrapper").hide();
+		$("#overviewView").show();
+	}
+
 	this.numberOfGuests.val(model.getNumberOfGuests());
 	loadMenu();
 	this.totalCost.html(model.getTotalMenuPrice());

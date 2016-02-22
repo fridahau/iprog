@@ -101,7 +101,7 @@
             </tfoot>
           </table>
           <div class="text-center">
-            <botton type="botton" class="btn btn-warning">Confirm dinner</botton> 
+            <botton type="botton" class="btn btn-warning" id="confirmButton">Confirm dinner</botton> 
           </div>
         </div>
       </div><!--end menuView-->
@@ -129,12 +129,12 @@
                 Filter:
                 <div class="btn-group" id="filterBar">
                   <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    All <span class="caret"></span>
+                    <span id="activeFilter"></span><span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" id="dropDown">
-                    <li><a href="#">Starter</a></li>
-                    <li><a href="#">Main course</a></li>
-                    <li><a href="#">Desert</a></li>
+                    <li><a value="starter">Starter</a></li>
+                    <li><a value="main dish">Main course</a></li>
+                    <li><a value="dessert">Desert</a></li>
                   </ul>
                 </div>
               </div> <!--end filter-->
@@ -185,6 +185,78 @@
       </div><!--end main-wrapper-->
     </div><!--end wrapper-->
 
+    <div id="overviewView">
+      <div id="wrapper">    
+        <div id="main-wrapper" class="col-sm-12">
+          <div id="main">
+            <!-- main header -->
+            <div id="searchHeader">
+              <h3 class="padding">My dinner: <span id="numberOfGuests"></span> people</h3>
+              <button id="editDinner" class="btn btn-warning" style='margin-left: 15px'>Go back and edit dinner</button>
+              </br>
+            </div><!--end searchHeader-->
+              
+            <!-- Content -->
+            <div id="displayMenu">  
+              <div class="row" style='margin-top: 15px;'>            
+                <div class="col-lg-9" style='text-align: right;'>
+                  <table class="table" id="menuList">
+                    <thead></thead>
+                    <tbody>
+                    </tbody>    
+                  </table>
+                </div>
+
+                <div class="col-lg-3" >
+                  <p><b>Total</b></p>
+                  <p>SEK <span id="totalPrice"></span></p>
+                </div>
+              </div>
+
+              <div class="row text-center">
+                <botton type="button" class="btn btn-warning" id="printRecipe">Print full recipe</botton>
+              </div>
+            </div><!--end displayDishes-->
+          </div>               
+        </div>
+      </div>
+    </div><!-- end overviewView-->
+
+    <div id="instructionView">
+      <div id="wrapper">
+        <div id="main-wrapper" class="col-sm-12">
+          <div id="main">
+            <!-- main header -->
+            <div id="searchHeader" class="padding">
+              <h3 class="padding">My dinner: <span id="numberOfGuests"></span> people</h3>
+              <button id="editDinner" class="btn btn-warning" style='margin-left: 15px'>Go back and edit dinner</button>
+              </br>
+            </div>
+
+                
+            <!-- Content -->
+            <div id="displayMenu">
+              <div id="menuList">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <img src="images/icecream.jpg" id="dishImage" align="left">
+                    <h3><span id="dishName">Ice cream</h3>
+                    <p><span id="dishDescription"></span>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <h3>Preparation</h3>
+                    <span id="dishPreparation"></span>
+                  </div>
+                </div>
+              </div>
+            </div><!--end displayDishes-->
+              
+          </div>                  
+        </div>
+      </div>
+    </div><!-- end isntructionView-->
+
     <!-- jQuery -->
     <!--<script src="https://code.jquery.com/jquery.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -207,5 +279,13 @@
 
     <script src="js/view/dishView.js"></script>
     <script src="js/controller/dishController.js"></script>
+
+    <script src="js/view/overviewView.js"></script>
+    <script src="js/controller/overviewController.js"></script>
+
+    <script src="js/view/instructionView.js"></script>
+    <script src="js/controller/instructionController.js"></script>
+
+
   </body>
 </html>

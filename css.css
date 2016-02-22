@@ -56,6 +56,10 @@ a.thumbnail:hover{
   border-top: none !important;
 }
 
+.img-margin {
+  margin: 15px;
+}
+
 #citation {
   padding: 0px;
   font-style: italic; 

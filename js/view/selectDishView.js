@@ -7,6 +7,8 @@ var SelectDishView = function (container, model) {
 	this.searchButton = container.find("#searchButton");
 	this.dropDown = container.find("#dropDown");
 	var displayDishes = container.find("#displayDishes");
+	this.activeFilterLabel = container.find("#activeFilter");
+	this.activeFilter = "starter";
 
 	this.update = function () {
 		container.hide();
@@ -14,8 +16,8 @@ var SelectDishView = function (container, model) {
 	}
 
 	//Math.ceil(x) round to the next whole number
-	var filerDishes = function(){
-		var dishes = model.getAllDishes("starter");
+	this.filerDishes = function(filter){
+		var dishes = model.getAllDishes(filter);
 		var counter = 0;
 		var result = "";
 		var dishImage ="";
@@ -54,10 +56,11 @@ var SelectDishView = function (container, model) {
 		}
 		
 		displayDishes.html(result);
-
+		this.activeFilter = filter;
+		this.activeFilterLabel.html(this.activeFilter);
 	}
 
-	filerDishes();
+	this.filerDishes(this.activeFilter);
 	model.addObserver(this);
 
 }
