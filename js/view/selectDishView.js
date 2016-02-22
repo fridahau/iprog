@@ -2,21 +2,25 @@
 var SelectDishView = function (container, model) {
 
 	// Get all the relevant elements of the view (ones that show data
-		// and/or ones that responed to interaction)
+	// and/or ones that responed to interaction)
 	this.searchField = container.find("#searchField");
 	this.searchButton = container.find("#searchButton");
 	this.dropDown = container.find("#dropDown");
-	var displayDishes = container.find("#displayDishes");
+	this.displayDishes = container.find("#displayDishes");
 	this.activeFilterLabel = container.find("#activeFilter");
 	this.activeFilter = "starter";
 
 	this.update = function () {
+		//this.filterDishes(this.activeFilter);
+	}
+
+	this.goViewDish = function() {
 		container.hide();
 		$("#dishView").show();
 	}
 
 	//Math.ceil(x) round to the next whole number
-	this.filerDishes = function(filter){
+	this.filterDishes = function(filter){
 		var dishes = model.getAllDishes(filter);
 		var counter = 0;
 		var result = "";
@@ -55,12 +59,12 @@ var SelectDishView = function (container, model) {
 			}
 		}
 		
-		displayDishes.html(result);
+		this.displayDishes.html(result);
 		this.activeFilter = filter;
 		this.activeFilterLabel.html(this.activeFilter);
 	}
 
-	this.filerDishes(this.activeFilter);
+	this.filterDishes(this.activeFilter);
 	model.addObserver(this);
 
 }
