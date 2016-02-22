@@ -1,16 +1,15 @@
 //ExampleView Object constructor
 var DishView = function (container, model) {
-	var dishName = container.find("#dishName");
-	var dishImage = container.find("#dishImage");
-	var dishDescription = container.find("#dishDescription");
+	this.dishName = container.find("#dishName");
+	this.dishImage = container.find("#dishImage");
+	this.dishDescription = container.find("#dishDescription");
 	this.backBtn = container.find("#backButton");
 	this.numberOfGuests = container.find("#numberOfGuests");
 	var dishIngredients = container.find("#dishIngredients");
-	var totalPrice = container.find("#totalPrice");
+	this.totalPrice = container.find("#totalPrice");
 	this.confirmBtn = container.find("#confirmButton");
-	var dishPreparation = container.find("#dishPreparation");
+	this.dishPreparation = container.find("#dishPreparation");
 
-	this.numberOfGuests.html(model.getNumberOfGuests());
 
 	this.update = function(){
 		var activeDish = model.getActiveDish();
@@ -18,17 +17,19 @@ var DishView = function (container, model) {
 	}
 	
 	this.loadDish = function(dish){
-		dishName.html(dish.name);
-		dishImage.html('<img src="images/'+dish.image+'" class="img-thumbnail">');
-		dishDescription.html(dish.description);
-		dishPreparation.html(dish.description);
+		this.dishName.html(dish.name);
+		this.dishImage.html('<img src="images/'+dish.image+'" class="img-thumbnail">');
+		this.dishDescription.html(dish.description);
+		this.dishPreparation.html(dish.description);
 
 		var dishIng = dish.ingredients;
 		this.loadIngredients(dishIng);
-		totalPrice.html(model.getDishCost(dish.id));
+		this.totalPrice.html(model.getDishCost(dish.id));
 	}
 
 	this.loadIngredients = function(ingList){
+		this.numberOfGuests.html(model.getNumberOfGuests());
+		dishIngredients.find('tbody').html(''); //clear
 		$.each(ingList, function(i, o){
 			var people = model.getNumberOfGuests();
 			
@@ -36,6 +37,11 @@ var DishView = function (container, model) {
 		});
 	}
 	
+	this.goBack = function(){
+		container.hide();
+		$("#selectDishView").show();
+	}
+
 	var test = {
 		'id':1,
 		'name':'French toast',

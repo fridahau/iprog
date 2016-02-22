@@ -89,10 +89,10 @@ var DinnerModel = function() {
 		this.notifyObservers();
 	}
 
+	//Returns active dish
 	this.getActiveDish = function(){
 		return activeDish;
 	}
-
 
 	// sets the number of guests
 	this.setNumberOfGuests = function(num) {
@@ -164,7 +164,8 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		menu.push(getDish(id));
+		menu.push(this.getDish(id));
+		this.notifyObservers();
 	}
 
 	//Removes dish from menu

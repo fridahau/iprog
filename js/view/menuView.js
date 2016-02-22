@@ -28,7 +28,6 @@ var MenuView = function (container, model) {
 	this.update = function(){
 		this.totalCost.html(model.getTotalMenuPrice());
 		loadMenu();
-
 		this.numberOfGuests.val(model.getNumberOfGuests());
 	}
 
