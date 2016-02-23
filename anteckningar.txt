@@ -14,3 +14,4 @@ Kvar att göra:
 Logiken. Man ska inte kunna välja 2 starters. 
 Disablea confirm dish när det inte finns någon på menyn. 
 Minst en gäst?
+Antalet gäster uppdateras inte på instructions och overview.
