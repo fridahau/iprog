@@ -15,3 +15,4 @@ Logiken. Man ska inte kunna välja 2 starters.
 Disablea confirm dish när det inte finns någon på menyn. 
 Minst en gäst?
 Antalet gäster uppdateras inte på instructions och overview.
+Lägg till nya listeners när vi uppdaterar menyn på select dish. Har en liknande funktion på menuView. Glöm inte

@@ -8,6 +8,7 @@ var SelectDishView = function (container, model) {
 	this.dropDown = container.find("#dropDown");
 	this.displayDishes = container.find("#displayDishes");
 	this.activeFilterLabel = container.find("#activeFilter");
+	this.filters = container.find("#filterGroup");
 	this.activeFilter = "starter";
 
 	this.update = function () {
