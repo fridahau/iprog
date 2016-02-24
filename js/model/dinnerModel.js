@@ -73,10 +73,13 @@ var DinnerModel = function() {
 	//var menu = [];
 	this.observers = [];
 
+	// Add obesevers 
 	this.addObserver = function(observer){
 		this.observers.push(observer);
 	}
 
+
+	// Call all observers update function
 	this.notifyObservers = function(arg) {
 		for(var i=0; i<this.observers.length; i++) {
 			this.observers[i].update(arg);

@@ -6,6 +6,8 @@ $(function() {
 	var homeScreenView = new HomeScreenView($("#homeScreenView"), model);
 	var homeScreenController = new HomeScreenController(homeScreenView, model);
 
+	//var dinnerView = new DinnerView($("#dinnerView"), model);
+
 	//Menu
 	var menuView = new MenuView($("#menuView"), model);
 	var menuController = new MenuController(menuView, model);
