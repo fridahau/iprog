@@ -1,0 +1,17 @@
+Frågor
+* Hur gör man för att inte upprepa kod mellan "selectDish" och "viewDish"
+
+Anteckningar:
+Overview:
+* Total beloppet vill inte ner
+
+Buggar:
+- Select Dish
+* Man kan välja dish efter att ha valt filter.
+* Klickar man på +/- knapparna hamnar man på Dish view av någon anledning
+
+Kvar att göra:
+Logiken. Man ska inte kunna välja 2 starters. 
+Disablea confirm dish när det inte finns någon på menyn. 
+Minst en gäst?
+Antalet gäster uppdateras inte på instructions och overview.

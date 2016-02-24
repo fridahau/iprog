@@ -1,0 +1,152 @@
+body {
+  font: 400 15px Lato, sans-serif;
+  line-height: 1.8;
+  color: #434A54;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 30px;
+  color: #434A54;
+  font-weight: 600;
+}
+
+h3 {
+  color: #434A54;
+}  
+
+hr {
+  border-color: #000;
+}
+
+.btn-warning{
+  border-color: #F6BB42;
+  background-color: #F6BB42;
+}
+
+.btn-warning:hover{
+  border-color: #FFCE54;
+  background-color: #FFCE54;
+}
+
+a.thumbnail{
+  width: 140px;
+  text-decoration: none;
+  border-color: #E6E9ED;
+  color: #434A54;
+}
+
+a.thumbnail:hover{
+  text-decoration: none;
+  border-color: #F5F7FA;
+  color: #AAB2BD;
+  cursor: pointer;
+}
+
+.borderless {
+  border-top: 1px solid #000 !important;
+  margin: 0px;
+}
+
+.borderless > tfoot > tr > td{
+  border-top: 1px solid #000 !important;
+}
+
+.borderless td {
+  border-top: none !important;
+}
+
+.img-margin {
+  margin: 15px;
+}
+
+#citation {
+  padding: 0px;
+  font-style: italic; 
+}
+
+#header {
+  height: 135px;
+  background-color: #E6E9ED;
+}
+
+#header2 {
+  height: 135px;
+  background-color: rgba(255, 221, 135, 0.9);
+}
+
+#wrapper {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+
+#menuTable td + td, #menuTable th + th {
+  text-align: right;
+}
+
+.well {
+  background-color: rgba(245, 245, 245, 0.9);
+  border: none;
+}
+
+#main-wrapper {
+  height: 100%;
+  padding: 135px 0 0px 0;
+  margin: 0 0 200px 0;
+  overflow-y: auto;
+}
+
+#main {
+  position: relative;
+  height: 100%;
+  padding: 0 15px;
+  overflow-y: auto;
+}
+
+#displayDishes {
+  position: absolute;
+  top: 150px;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#displayMenu {
+  position: absolute;
+  top: 70px;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#searchHeader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0 15px 15px 15px;
+  background-color: #FFDD87;
+}
+
+.padding{
+  display: inline-block;
+} 
+
+#sidebar-wrapper {
+  height: 100%;
+  padding: 135px 15px 0 15px;
+  position: fixed;
+}
+
+#searchBar{
+  padding: 0px;
+  margin: 0px;
+}
