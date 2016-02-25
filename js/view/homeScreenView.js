@@ -5,10 +5,12 @@ var HomeScreenView = function (container, model) {
 	this.enterBtn = container.find("#enter");
 	this.welcomeText = container.find("#welcomeText");
 
+	//hide views that are should not be shown.
 	$("#wrapper").hide();
 	$("#header").hide();
 
-	this.update = function(){
+	//Go to the menu view and select dish view
+	this.enterSite = function(){
 		$("#header2").hide();
 		container.hide();
 		$("#header").show();

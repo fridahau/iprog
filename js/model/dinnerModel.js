@@ -2,213 +2,7 @@
 var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	var activeDish;
-	var numOfGuests = 2;
-	var menu = [{
-		'id':1,
-		'name':'French toast',
-		'type':'starter',
-		'image':'toast.jpg',
-		'description':"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.",
-		'ingredients':[{ 
-			'name':'eggs',
-			'quantity':0.5,
-			'unit':'',
-			'price':10
-			},{
-			'name':'milk',
-			'quantity':30,
-			'unit':'ml',
-			'price':6
-			},{
-			'name':'brown sugar',
-			'quantity':7,
-			'unit':'g',
-			'price':1
-			},{
-			'name':'ground nutmeg',
-			'quantity':0.5,
-			'unit':'g',
-			'price':12
-			},{
-			'name':'white bread',
-			'quantity':2,
-			'unit':'slices',
-			'price':2
-			}]
-		},{
-		'id':1,
-		'name':'French toast',
-		'type':'starter',
-		'image':'toast.jpg',
-		'description':"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.",
-		'ingredients':[{ 
-			'name':'eggs',
-			'quantity':0.5,
-			'unit':'',
-			'price':10
-			},{
-			'name':'milk',
-			'quantity':30,
-			'unit':'ml',
-			'price':6
-			},{
-			'name':'brown sugar',
-			'quantity':7,
-			'unit':'g',
-			'price':1
-			},{
-			'name':'ground nutmeg',
-			'quantity':0.5,
-			'unit':'g',
-			'price':12
-			},{
-			'name':'white bread',
-			'quantity':2,
-			'unit':'slices',
-			'price':2
-			}]
-		}];
-
-	//var menu = [];
-	this.observers = [];
-
-	// Add obesevers 
-	this.addObserver = function(observer){
-		this.observers.push(observer);
-	}
-
-
-	// Call all observers update function
-	this.notifyObservers = function(arg) {
-		for(var i=0; i<this.observers.length; i++) {
-			this.observers[i].update(arg);
-		}	
-	}
-
-	//Sets the active dish
-	this.setActiveDish = function(id) {
-		activeDish = this.getDish(id);
-		this.notifyObservers();
-	}
-
-	//Returns active dish
-	this.getActiveDish = function(){
-		return activeDish;
-	}
-
-	// sets the number of guests
-	this.setNumberOfGuests = function(num) {
-		if(num >= 0) {
-			numOfGuests = num;
-			this.notifyObservers();
-		}
-	}
-
-	// should return 
-	this.getNumberOfGuests = function() {
-		return parseInt(numOfGuests);
-	}
-
-	//Returns the dish that is on the menu for selected type 
-	this.getSelectedDish = function(type) {
-		$.each(menu, function(index, dish){
-			if(dish.type == type) {
-				return dish;
-			}
-		});
-	}
-
-	//Returns all the dishes on the menu.
-	this.getFullMenu = function() {
-		return menu;
-	}
-
-	//Returns all ingredients for all the dishes on the menu.
-	this.getAllIngredients = function() {
-		var ingredientsList = [];
-
-		$.each(menu, function(index, dish){
-			ingredientsList.push(dish.ingredients);
-		});
-
-		return ingredientsList;
-	}
-
-	//Returns the price for a specific fish (all ingredients multiplied by number of guests).
-	this.getDishCost = function(id){
-		var dishCost = 0;
-		var dish = this.getDish(id);
-
-		$.each(dish.ingredients, function(i, ingredient) {
-			dishCost += ingredient.price*numOfGuests;
-		});
-
-		return dishCost;
-	}
-
-	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	this.getTotalMenuPrice = function() {
-		var totalPrice = 0;
 	
-		$.each(menu, function(index, dish){
-			$.each(dish.ingredients, function(i, ingredient) {
-				totalPrice += ingredient.price*numOfGuests;
-			});
-			
-
-			//totalPrice += this.getDishCost(dish.id);
-			
-		});
-		
-		return totalPrice;
-	}
-
-	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
-	//it is removed from the menu and the new one added.
-	this.addDishToMenu = function(id) {
-		menu.push(this.getDish(id));
-		this.notifyObservers();
-	}
-
-	//Removes dish from menu
-	this.removeDishFromMenu = function(id) {
-		menu = $.grep(menu, function(dish){
-			return dish.id != id;
-		});
-	}
-
-	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
-	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
-	//if you don't pass any filter all the dishes will be returned
-	this.getAllDishes = function (type, filter) {
-	  return $(dishes).filter(function(index,dish) {
-		var found = true;
-		if(filter){
-			found = false;
-			$.each(dish.ingredients, function(index,ingredient) {
-				if(ingredient.name.indexOf(filter)!=-1) {
-					found = true;
-				}
-			});
-			if(dish.name.indexOf(filter) != -1){
-				found = true;
-			}
-		}
-	  	return dish.type == type && found;
-	  });	
-	}
-
-	//function that returns a dish of specific ID
-	this.getDish = function (id) {
-	  for(key in dishes){
-			if(dishes[key].id == id) {
-				return dishes[key];
-			}
-		}
-	}
-
-
 	// the dishes variable contains an array of all the 
 	// dishes in the database. each dish has id, name, type,
 	// image (name of the image file), description and
@@ -400,7 +194,7 @@ var DinnerModel = function() {
 			'price':4
 			}]
 		},{
-		'id':102,
+		'id':103,
 		'name':'MD 4',
 		'type':'main dish',
 		'image':'meatballs.jpg',
@@ -418,6 +212,28 @@ var DinnerModel = function() {
 			},{
 			'name':'ingredient 3',
 			'quantity':6,
+			'unit':'ml',
+			'price':4
+			}]
+		},{
+		'id':104,
+		'name':'MD 5',
+		'type':'main dish',
+		'image':'bakedbrie.jpg',
+		'description':"Here is how you make it... Lore ipsum...",
+		'ingredients':[{ 
+			'name':'ingredient 1',
+			'quantity':1,
+			'unit':'pieces',
+			'price':8
+			},{
+			'name':'ingredient 2',
+			'quantity':15,
+			'unit':'g',
+			'price':7
+			},{
+			'name':'ingredient 3',
+			'quantity':10,
 			'unit':'ml',
 			'price':4
 			}]
@@ -459,5 +275,215 @@ var DinnerModel = function() {
 			}]
 		}
 	];
+	var activeDish = dishes[0];
+	var numOfGuests = 2;
+	var menu = [{
+		'id':1,
+		'name':'French toast',
+		'type':'starter',
+		'image':'toast.jpg',
+		'description':"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.",
+		'ingredients':[{ 
+			'name':'eggs',
+			'quantity':0.5,
+			'unit':'',
+			'price':10
+			},{
+			'name':'milk',
+			'quantity':30,
+			'unit':'ml',
+			'price':6
+			},{
+			'name':'brown sugar',
+			'quantity':7,
+			'unit':'g',
+			'price':1
+			},{
+			'name':'ground nutmeg',
+			'quantity':0.5,
+			'unit':'g',
+			'price':12
+			},{
+			'name':'white bread',
+			'quantity':2,
+			'unit':'slices',
+			'price':2
+			}]
+		},{
+		'id':200,
+		'name':'Chocolat Ice cream',
+		'type':'dessert',
+		'image':'icecream.jpg',
+		'description':"Here is how you make it... Lore ipsum...",
+		'ingredients':[{ 
+			'name':'ice cream',
+			'quantity':100,
+			'unit':'ml',
+			'price':6
+			}]
+		}];
+	var activeFilter = "starter";
+	//var menu = [];
+	this.observers = [];
+
+	// Add obesevers 
+	this.addObserver = function(observer){
+		this.observers.push(observer);
+	}
+
+	// Call all observers update function
+	this.notifyObservers = function(arg) {
+		for(var i=0; i < this.observers.length; i++) {
+			this.observers[i].update(arg);
+		}	
+	}
+
+	//Sets the active dish
+	this.setActiveDish = function(id) {
+		activeDish = this.getDish(id);
+		this.notifyObservers();
+	}
+
+	//Returns active dish
+	this.getActiveDish = function(){
+		return activeDish;
+	}
+
+	//Set the active filter to the given filter
+	this.setFilter = function(filter) {
+		activeFilter = filter;
+	}
+
+	//Return the active filter.
+	this.getFilter = function(){
+		return activeFilter;
+	}
+
+	// sets the number of guests
+	this.setNumberOfGuests = function(num) {
+		if(num >= 0) {
+			numOfGuests = num;
+			this.notifyObservers();
+		}
+	}
+
+	// returns number of guests
+	this.getNumberOfGuests = function() {
+		return parseInt(numOfGuests);
+	}
+
+	//Returns the dish that is on the menu for selected type 
+	this.getSelectedDish = function(type) {
+		for(var i = 0; i < menu.length; i++){
+			if(menu[i].type == type){
+				return menu[i];
+			}
+		}
+
+		//not found
+		return "-1";
+		/*
+		$.each(menu, function(index, dish){
+			if(dish.type == type) {
+				return dish;
+			}
+		});*/
+	}
+
+	//Returns all the dishes on the menu.
+	this.getFullMenu = function() {
+		return menu;
+	}
+
+	//Returns all ingredients for all the dishes on the menu.
+	this.getAllIngredients = function() {
+		var ingredientsList = [];
+
+		$.each(menu, function(index, dish){
+			ingredientsList.push(dish.ingredients);
+		});
+
+		return ingredientsList;
+	}
+
+	//Returns the price for a specific fish (all ingredients multiplied by number of guests).
+	this.getDishCost = function(id){
+		var dishCost = 0;
+		var dish = this.getDish(id);
+
+		$.each(dish.ingredients, function(i, ingredient) {
+			dishCost += ingredient.price*numOfGuests;
+		});
+
+		return dishCost;
+	}
+
+	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
+	this.getTotalMenuPrice = function() {
+		var totalPrice = 0;
+	
+		$.each(menu, function(index, dish){
+			$.each(dish.ingredients, function(i, ingredient) {
+				totalPrice += ingredient.price*numOfGuests;
+			});
+			
+
+			//totalPrice += this.getDishCost(dish.id);
+			
+		});
+		
+		return totalPrice;
+	}
+
+	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
+	//it is removed from the menu and the new one added.
+	this.addDishToMenu = function(id) {
+		menu.push(this.getDish(id));
+		this.notifyObservers();
+	}
+
+	//Removes dish from menu
+	this.removeDishFromMenu = function(id) {
+		menu = $.grep(menu, function(dish){
+			return dish.id != id;
+		});
+		
+		this.notifyObservers();
+	}
+
+	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
+	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
+	//if you don't pass any filter all the dishes will be returned
+	this.getAllDishes = function (type,filter) {
+	  return $(dishes).filter(function(index,dish) {
+		var found = true;
+
+		if(filter){
+			found = false;
+			$.each(dish.ingredients,function(index,ingredient) {
+				if(ingredient.name.toLowerCase().indexOf(filter.toLowerCase())!=-1) {
+					found = true;
+				}
+			});
+			if(dish.name.toLowerCase().indexOf(filter.toLowerCase()) != -1)
+			{
+				found = true;
+			}
+		}
+	  	return dish.type == type && found;
+	  });	
+	}
+
+	//function that returns a dish of specific ID
+	this.getDish = function (id) {
+	  for(key in dishes){
+			if(dishes[key].id == id) {
+				return dishes[key];
+			}
+		}
+	}
+
+
+
 
 }

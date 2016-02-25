@@ -30,7 +30,6 @@ hr {
 }
 
 a.thumbnail{
-  width: 140px;
   text-decoration: none;
   border-color: #E6E9ED;
   color: #434A54;
@@ -91,6 +90,15 @@ a.thumbnail:hover{
 .well {
   background-color: rgba(245, 245, 245, 0.9);
   border: none;
+}
+
+.glyphicon-remove:hover{
+  cursor: pointer;
+}
+
+a:hover{
+  cursor: pointer;
+  text-decoration: none;
 }
 
 #main-wrapper {

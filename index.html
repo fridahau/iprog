@@ -84,22 +84,26 @@
         
 
           <!-- menu -->
-          <table class="table" style='margin-top: 15px;' id="menuTable">
-            <thead style='background-color: #E6E9ED;'>
-              <tr>
-                <th>Dish Name</th>
-                <th>Cost</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td></td>
-                <td>SEK <span id="totalCost"></span></td>
-              </tr>
-            </tfoot>
-          </table>
+          <div id="menuItems">
+            <table class="table" style='margin-top: 15px;' id="menuTable">
+              <thead style='background-color: #E6E9ED;'>
+                <tr>
+                  <th>Dish Name</th>
+                  <th>Cost</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td></td>
+                  <td>SEK <span id="totalCost"></span></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
           <div class="text-center">
             <botton type="botton" class="btn btn-warning" id="confirmButton">Confirm dinner</botton> 
           </div>
@@ -115,26 +119,32 @@
               <h3>Select dish</h3>
               <hr>
               <!-- search -->
-              <div id="searchBar" class="col-sm-5">
-                <form class="navbar-form navbar-left" role="search" id="searchBar">
+              <div id="searchBar" class="col-sm-3">
+                <!--<form class="navbar-form navbar-left" role="search" id="searchBar">
                   <div class="form-group">
                     <input type="text" class="form-control input-sm" placeholder="Search" id="searchField">
                   </div> 
-                  <button type="submit" class="btn btn-default btn-sm" id="searchButton"><span class="glyphicon glyphicon-search"></span></button>
-                </form>
+                  <button class="btn btn-default btn-sm" id="searchButton"><span class="glyphicon glyphicon-search"></span></button>
+                </form>-->
+                <div class="input-group">
+                  <input type="text" class="form-control input-sm" placeholder="Search" id="searchField">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default btn-sm" type="button" id="searchButton"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+                </div><!-- /input-group -->
               </div><!--end search-->
 
               <!--filter-->
-              <div id="filterGroup" class="col-sm-4">
+              <div id="filterGroup" class="col-sm-5">
                 Filter:
                 <div class="btn-group" id="filterBar">
-                  <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" width="200px">
                     <span id="activeFilter"></span><span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" id="dropDown">
                     <li><a value="starter">Starter</a></li>
-                    <li><a value="main dish">Main course</a></li>
-                    <li><a value="dessert">Desert</a></li>
+                    <li><a value="main dish">Main dish</a></li>
+                    <li><a value="dessert">Dessert</a></li>
                   </ul>
                 </div>
               </div> <!--end filter-->

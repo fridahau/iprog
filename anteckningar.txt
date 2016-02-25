@@ -1,18 +1,8 @@
 Frågor
-* Hur gör man för att inte upprepa kod mellan "selectDish" och "viewDish"
-
+* Hur gör man för att lägga till listerners från en view från en annan controller? T.ex. lägga till dish från dishView. Men klickbarheten läggs bara till om något klickas i menuView.
+* Finns det ett bättre sätt att showa/hidea views än att leta efter dem med $("#something")?
+w
 Anteckningar:
 Overview:
 * Total beloppet vill inte ner
 
-Buggar:
-- Select Dish
-* Man kan välja dish efter att ha valt filter.
-* Klickar man på +/- knapparna hamnar man på Dish view av någon anledning
-
-Kvar att göra:
-Logiken. Man ska inte kunna välja 2 starters. 
-Disablea confirm dish när det inte finns någon på menyn. 
-Minst en gäst?
-Antalet gäster uppdateras inte på instructions och overview.
-Lägg till nya listeners när vi uppdaterar menyn på select dish. Har en liknande funktion på menuView. Glöm inte

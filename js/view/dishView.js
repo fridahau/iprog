@@ -10,12 +10,13 @@ var DishView = function (container, model) {
 	this.confirmBtn = container.find("#confirmButton");
 	this.dishPreparation = container.find("#dishPreparation");
 
-
+	//On update, reload the view with the active dish.
 	this.update = function(){
 		var activeDish = model.getActiveDish();
 		this.loadDish(activeDish);
 	}
 	
+	//Load the dish with it's name, image, description and preparation strings.
 	this.loadDish = function(dish){
 		this.dishName.html(dish.name);
 		this.dishImage.html('<img src="images/'+dish.image+'" class="img-thumbnail">');
@@ -27,6 +28,7 @@ var DishView = function (container, model) {
 		this.totalPrice.html(model.getDishCost(dish.id));
 	}
 
+	//Load a dish's igridients to the ingridients list.
 	this.loadIngredients = function(ingList){
 		this.numberOfGuests.html(model.getNumberOfGuests());
 		dishIngredients.find('tbody').html(''); //clear
@@ -37,45 +39,11 @@ var DishView = function (container, model) {
 		});
 	}
 	
+	//Go back to the select view.
 	this.goBack = function(){
 		container.hide();
 		$("#selectDishView").show();
 	}
-
-	var test = {
-		'id':1,
-		'name':'French toast',
-		'type':'starter',
-		'image':'toast.jpg',
-		'description':"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.",
-		'ingredients':[{ 
-			'name':'eggs',
-			'quantity':0.5,
-			'unit':'',
-			'price':10
-			},{
-			'name':'milk',
-			'quantity':30,
-			'unit':'ml',
-			'price':6
-			},{
-			'name':'brown sugar',
-			'quantity':7,
-			'unit':'g',
-			'price':1
-			},{
-			'name':'ground nutmeg',
-			'quantity':0.5,
-			'unit':'g',
-			'price':12
-			},{
-			'name':'white bread',
-			'quantity':2,
-			'unit':'slices',
-			'price':2
-			}]
-		};
-
 
 	container.hide();
 	model.addObserver(this);

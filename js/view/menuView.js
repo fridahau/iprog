@@ -9,8 +9,9 @@ var MenuView = function (container, model) {
 	this.confirmButton = container.find("#confirmButton");
 	var menuTable = container.find("#menuTable");
 	this.totalCost = container.find("#totalCost");
+	this.menuItems = container.find("#menuItems");
 
-	
+	//load the menu with it's dishes.
 	var loadMenu = function() {
 		menuTable.find('tbody').html(''); //clear menu
 		var menu = model.getFullMenu();
@@ -19,7 +20,8 @@ var MenuView = function (container, model) {
 			var id = o.id;
 			var price = model.getDishCost(id);
 
-			menuTable.find('tbody').prepend('<tr><td>'+name+'</td><td>'+price+'</td></tr>');
+			menuTable.find('tbody').prepend('<tr><td><a value="'+id+'">'+name+'</a></td><td>'+price+'</td><td><span class="glyphicon glyphicon-remove" value="'+id+'"></span></td></tr>');
+			//menuTable.append('<a class="list-group-item clearfix" value="'+id+'">'+name+'<span class="pull-right">'+price+' <span class="glyphicon glyphicon-remove"></span></span></a>');
 		});
 	}
 	
@@ -29,17 +31,29 @@ var MenuView = function (container, model) {
 		this.totalCost.html(model.getTotalMenuPrice());
 		loadMenu();
 		this.numberOfGuests.val(model.getNumberOfGuests());
+		
+		if(model.getFullMenu().length == 0) {
+			this.confirmButton.addClass("disabled");
+		} else {
+			this.confirmButton.removeClass("disabled");
+		}
 	}
 
+	//Go to the overview
 	this.confirmFunc = function(){
 		$("#wrapper").hide();
 		$("#overviewView").show();
 	}
 
+	//View the selected dish.
+	this.viewDish = function(){
+		$("#selectDishView").hide();
+		$("#dishView").show();		
+	}
+
 	this.numberOfGuests.val(model.getNumberOfGuests());
 	loadMenu();
 	this.totalCost.html(model.getTotalMenuPrice());
-	
 	model.addObserver(this);
 
 }

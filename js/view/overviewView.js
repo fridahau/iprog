@@ -7,8 +7,6 @@ var OverviewView = function (container, model) {
 	this.printRecipeBtn = container.find("#printRecipe");
 
 	//container.html('');
-	this.numberOfGuests.html(model.getNumberOfGuests());
-
 	var loadMenu = function (){
 		var menu = model.getFullMenu();
 		menuList.find('tbody').html(''); //clear;
@@ -22,22 +20,29 @@ var OverviewView = function (container, model) {
 		totalPrice.html(model.getTotalMenuPrice());
 	}
 
+	//Update the view by reloading the menu and number of guests.
 	this.update = function() {
 		loadMenu();
+		this.numberOfGuests.html(model.getNumberOfGuests());
 	}
 
+	//Go to the instruction view.
 	this.printFunc = function(){
 		container.hide();
 		$("#instructionView").show();
 	}
 
+	//Go back to the select dish view.
 	this.goBack = function(){
 		container.hide();
 		$("#wrapper").show();
+		$("#selectDishView").show();
+		$("#dishView").hide();
 	}
 
 
 	loadMenu();
+	this.numberOfGuests.html(model.getNumberOfGuests());
 	model.addObserver(this);
 	container.hide();
 
