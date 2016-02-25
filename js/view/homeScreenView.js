@@ -9,6 +9,8 @@ var HomeScreenView = function (container, model) {
 	$("#wrapper").hide();
 	$("#header").hide();
 
+	this.update = function(){}
+
 	//Go to the menu view and select dish view
 	this.enterSite = function(){
 		$("#header2").hide();

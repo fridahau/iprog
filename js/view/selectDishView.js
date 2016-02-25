@@ -16,6 +16,10 @@ var SelectDishView = function (container, model) {
 		$("#dishView").show();
 	}
 
+	this.update = function() {
+		//test
+	}
+
 	//Math.ceil(x) round to the next whole number
 	//Filter dishes on filter. Skip the inputText if not given.
 	this.filterDishes = function(filter, inputText){
