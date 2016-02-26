@@ -10,7 +10,7 @@ var SelectDishView = function (container, model) {
 	this.activeFilterLabel = container.find("#activeFilter");
 	this.filters = container.find("#filterGroup");
 	
-	//Go to the dish view.
+	//Go to the dish view
 	this.goViewDish = function() {
 		container.hide();
 		$("#dishView").show();
@@ -19,7 +19,6 @@ var SelectDishView = function (container, model) {
 	this.update = function() {
 		//test
 	}
-
 	//Math.ceil(x) round to the next whole number
 	//Filter dishes on filter. Skip the inputText if not given.
 	this.filterDishes = function(filter, inputText){
@@ -30,7 +29,7 @@ var SelectDishView = function (container, model) {
 		var dishDescription ="";
 
 		if(dishes.length == 0) {
-			alert("No dishes found.");
+			alert("No dishes was found.");
 			return;
 		}
 
@@ -89,7 +88,6 @@ var SelectDishView = function (container, model) {
 			this.activeFilterLabel.html("Dessert");
 		}
 	}
-
 
 	//this.filterDishes(model.getFilter());
 	this.filterDishes(model.getFilter());
