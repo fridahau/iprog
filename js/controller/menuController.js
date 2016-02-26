@@ -2,11 +2,15 @@ var MenuController = function(view, model) {
   //Add listener to the plus button
  	view.plusButton.click(function(){
  		model.setNumberOfGuests(model.getNumberOfGuests() + 1);
+    addRemoveListener();
+    addMenuItemListener();
  	});
  
   //Add listener to the minus button
  	view.minusButton.click(function(){
  		model.setNumberOfGuests(model.getNumberOfGuests() - 1);
+    addRemoveListener();
+    addMenuItemListener();
  	});
 
   //Add listener to the confirm button

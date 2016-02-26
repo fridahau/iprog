@@ -16,7 +16,7 @@ $(function() {
 
 	//View dish
 	var dishView = new DishView($("#dishView"), model);
-	var dishController = new DishController(dishView, model);
+	var dishController = new DishController(dishView, menuView, model);
 	
 	//Overview
 	var overviewView = new OverviewView($("#overviewView"), model);
